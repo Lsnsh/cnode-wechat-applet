@@ -1,9 +1,9 @@
 export default class Base {
   constructor() {
-    this.listUrl = '';
-    this.updateUrl = '';
-    this.detailUrl = '';
-    this.deleteUrl = '';
+    this.sListUrl = '';
+    this.sUpdateUrl = '';
+    this.sDetailUrl = '';
+    this.sDeleteUrl = '';
   }
   list() {}
   update() {}
