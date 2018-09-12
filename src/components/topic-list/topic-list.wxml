@@ -1,0 +1,3 @@
+<view>
+  <topic wx:for="{{data}}" wx:key="{{item.id}}" data="{{item}}"></topic>
+</view>

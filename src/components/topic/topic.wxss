@@ -1,0 +1,66 @@
+.topic-container {
+  padding: 25rpx;
+  background: #ffffff;
+  margin-bottom: 15rpx;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+}
+/* 头部 */
+.topic-container .topic-header {
+  font-size: 24rpx;
+  color: #7C7C7C;
+}
+.topic-container .topic-header .topic-header-right {
+  float: right;
+}
+.topic-container .topic-header .topic-title {
+  font-size: 32rpx;
+  margin-bottom: 30rpx;
+}
+/* 主题内容 */
+.topic-container .topic-content {
+  font-size: 28rpx;
+  color: #7C7C7C;
+}
+/* 分隔线 */
+.topic-container .topic-divide {
+  height: 1px;
+  margin: 20rpx 0;
+  background: #E3E3E3;
+}
+/* 主题底部 */
+.topic-container .topic-footer {
+  font-size: 24rpx; 
+  height: 60rpx;
+}
+.topic-container .topic-footer .topic-footer-left {
+  float: left;
+}
+.topic-container .topic-footer .topic-footer-left .topic-author-avatar {
+  float: left;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.topic-container .topic-footer .topic-footer-left .topic-author-name {
+  display:inline-block;
+  height:60rpx;
+  line-height:60rpx;
+  margin-left:20rpx;
+}
+
+.topic-container .topic-footer .topic-footer-right {
+  float: right;
+  line-height: 60rpx;
+  color: #7C7C7C;
+}
+.topic-label {
+  display: inline-block;
+  padding: 5rpx;
+  background: #EEEEEE;
+  font-style: 28rpx;
+}
+.clear-float::after {
+  content: '';
+  display: block;
+  clear: both;
+}

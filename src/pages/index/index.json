@@ -1,1 +1,10 @@
-{}
+{
+  "usingComponents": {
+    "topic-list": "/components/topic-list/topic-list"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle":"dark",
+  "navigationBarBackgroundColor": "#444444",
+  "navigationBarTitleText": "CNode社区",
+  "navigationBarTextStyle":"light"
+}
