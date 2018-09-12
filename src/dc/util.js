@@ -3,7 +3,7 @@ import CONFIG from '../config/index';
 
 const METHOD_EMUN = ['OPTIONS', 'GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'TRACE', 'CONNECT'];
 
-export default (oOption = {}) => {
+export default (oOption = {}, fnDataFormatter) => {
   oOption.url = CONFIG.api.url + oOption.url;
   oOption.method = String(oOption.method).toUpperCase();
   if (METHOD_EMUN.indexOf(oOption.method) === -1) {
@@ -14,7 +14,11 @@ export default (oOption = {}) => {
     request(oOption)
       .then(res => {
         if (res.success) {
-          resolve(res.data);
+          if (typeof fnDataFormatter === 'function') {
+            resolve(fnDataFormatter(res.data));
+          } else {
+            resolve(res.data);
+          }
         } else {
           reject(res);
         }
