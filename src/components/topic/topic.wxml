@@ -2,7 +2,7 @@
   <view class="topic-header">
     <view style="margin-bottom: 20rpx;">
       <!-- 主题标签 -->
-      <text class="topic-label">{{ data.tab }}</text>
+      <topic-tag type="{{ data.tab }}"></topic-tag>
       <view class="topic-header-right">
         <!-- 主题回复数 -->
         <text style="color: #8EB63D;">{{ data.reply_count }}</text>

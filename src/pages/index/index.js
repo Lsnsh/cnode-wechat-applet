@@ -56,8 +56,9 @@ Page({
       if (!oItem.author) {
         oItem.author = {};
       }
+      let sTab = oItem.top ? 'top' : oItem.good ? 'good' : oItem.tab;
       return {
-        tab: oItem.tab, // 分类
+        tab: sTab, // 分类
         reply_count: oItem.reply_count, // 回复数
         visit_count: oItem.visit_count, // 访问数
         last_reply_at: moment(oItem.last_reply_at).fromNow(), // 最后一次回复时间

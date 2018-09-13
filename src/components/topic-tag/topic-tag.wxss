@@ -1,0 +1,17 @@
+
+.topic-tag {
+  display: inline-block;
+  padding: 5rpx 10rpx;
+  color: #747474;
+  background: #EEEEEE;
+  font-style: 28rpx;
+  border-radius: 6rpx;
+}
+.topic-tag-top {
+  color: #ffffff;
+  background: #80bd01;
+}
+.topic-tag-good {
+  color: #ffffff;
+  background: #80bd01;
+}

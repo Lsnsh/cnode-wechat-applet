@@ -1,0 +1,1 @@
+<text class="topic-tag {{ oTopicTag.class }}">{{ oTopicTag.value || '问答' }}</text>

@@ -53,12 +53,6 @@
   line-height: 60rpx;
   color: #7C7C7C;
 }
-.topic-label {
-  display: inline-block;
-  padding: 5rpx;
-  background: #EEEEEE;
-  font-style: 28rpx;
-}
 .clear-float::after {
   content: '';
   display: block;
