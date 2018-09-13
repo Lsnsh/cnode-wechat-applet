@@ -1,0 +1,15 @@
+{
+  "name": "cnode-wechat-applet",
+  "version": "1.0.0",
+  "description": "cnode社区-微信小程序",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.22.2"
+  }
+}

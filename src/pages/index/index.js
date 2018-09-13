@@ -1,3 +1,6 @@
+const moment = require('moment');
+moment.locale('zh-cn');
+
 Page({
   data: {
     aTopicList: [] // 主题列表
@@ -53,17 +56,16 @@ Page({
       if (!oItem.author) {
         oItem.author = {};
       }
-      let sContent = this.fnFmtTopicContentToSummary(oItem.content);
       return {
         tab: oItem.tab, // 分类
         reply_count: oItem.reply_count, // 回复数
         visit_count: oItem.visit_count, // 访问数
-        last_reply_at: oItem.last_reply_at, // 最后一次回复时间
+        last_reply_at: moment(oItem.last_reply_at).fromNow(), // 最后一次回复时间
         title: oItem.title, // 标题
-        content: sContent, // 内容
+        content: this.fnFmtTopicContentToSummary(oItem.content), // 内容
         avatar_url: oItem.author.avatar_url, // 作者头像
         loginname: oItem.author.loginname, // 作者名称
-        create_at: oItem.create_at // 创建时间
+        create_at: moment(oItem.create_at).format('YYYY-MM-DD HH:mm:ss') // 创建时间
       };
     });
     return aTopicList;

@@ -9,11 +9,12 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"nodeModules": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.3",
-	"appid": "wxe2069bcd61a74fdd",
+	"appid": "wx1fbce108d3d37831",
 	"projectname": "cnode-wechat-applet",
 	"isGameTourist": false,
 	"condition": {
