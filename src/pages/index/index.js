@@ -3,15 +3,35 @@ moment.locale('zh-cn');
 
 Page({
   data: {
-    aTopicList: [] // 主题列表
+    aTopicList: [], // 主题列表
+    oTopicListReqParams: {
+      tab: '', // 页数
+      page: 1, // 主题分类。目前有 ask share job good
+      limit: 30, // 每一页的主题数量
+      mdrender: 'true' // 当为 'false' 时，不渲染。默认为 'true'，渲染出现的所有 markdown 格式文本。
+    }
   },
   onLoad() {
     // 获取主题列表数据
     this.fnNetRTopicList();
   },
   onPullDownRefresh() {
+    // 下拉刷新时，将页码重置为1
+    this.data.oTopicListReqParams.page = 1;
+    this.setData({
+      oTopicListReqParams: this.data.oTopicListReqParams
+    });
     // 获取主题列表数据
     this.fnNetRTopicList();
+  },
+  onReachBottom() {
+    // 下滑加载时，将页码累加
+    this.data.oTopicListReqParams.page++;
+    this.setData({
+      oTopicListReqParams: this.data.oTopicListReqParams
+    });
+    // 追加主题列表数据
+    this.fnNetRTopicList(true);
   },
   // 过滤html标签
   fnFilterHtmlTag(sText = '') {
@@ -24,16 +44,24 @@ Page({
     // 将主题内容，截取指定长度字符作为摘要
     return sContent.slice(0, nLen);
   },
-  // 获取主题列表
-  fnNetRTopicList() {
+  /**
+   * 获取主题列表
+   * @param {Boolean} bIsAppendTopicList 是否追加主题列表数据
+   */
+  fnNetRTopicList(bIsAppendTopicList = false) {
     // 显示标题栏加载效果
     wx.showNavigationBarLoading();
     wx.dc.topic
-      .list({}, this.fnTopicListDataFormatter)
+      .list(this.data.oTopicListReqParams, this.fnTopicListDataFormatter)
       .then(res => {
         if (res) {
+          let aNewTopicList = res;
+          if (bIsAppendTopicList) {
+            // 将现有主题列表与刚获取到主题列表数据合并
+            aNewTopicList = this.data.aTopicList.concat(aNewTopicList);
+          }
           this.setData({
-            aTopicList: res
+            aTopicList: aNewTopicList
           });
         }
         // 停止加载效果
