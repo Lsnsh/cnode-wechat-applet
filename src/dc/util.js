@@ -1,3 +1,4 @@
+import pathToRegexp from 'path-to-regexp';
 import request from '../utils/request';
 import CONFIG from '../config/index';
 
@@ -5,6 +6,9 @@ const METHOD_EMUN = ['OPTIONS', 'GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'TRACE',
 
 export default (oOption = {}, fnDataFormatter) => {
   oOption.url = CONFIG.api.url + oOption.url;
+  if (oOption.urlData) {
+    oOption.url = fnCompileDynamicUrl(oOption.url, oOption.urlData);
+  }
   oOption.method = String(oOption.method).toUpperCase();
   if (METHOD_EMUN.indexOf(oOption.method) === -1) {
     // 如果请求方式不是有效值,重置为默认值
@@ -28,3 +32,8 @@ export default (oOption = {}, fnDataFormatter) => {
       });
   });
 };
+
+function fnCompileDynamicUrl(sUrl = '', oData = {}) {
+  let toPath = pathToRegexp.compile(sUrl);
+  return toPath(oData);
+}

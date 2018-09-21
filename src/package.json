@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.22.2"
+    "moment": "^2.22.2",
+    "path-to-regexp": "^2.4.0"
   }
 }

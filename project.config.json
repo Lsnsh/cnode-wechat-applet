@@ -1,5 +1,5 @@
 {
-	"miniprogramRoot": "./src",
+	"miniprogramRoot": "src/",
 	"description": "项目配置文件。",
 	"packOptions": {
 		"ignore": []
@@ -23,6 +23,10 @@
 			"list": []
 		},
 		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
 			"current": -1,
 			"list": []
 		},
