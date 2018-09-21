@@ -1,6 +1,3 @@
-const moment = require('moment');
-moment.locale('zh-cn');
-
 Page({
   data: {
     aTopicList: [], // 主题列表
@@ -86,15 +83,16 @@ Page({
       }
       let sTab = oItem.top ? 'top' : oItem.good ? 'good' : oItem.tab;
       return {
+        id: oItem.id, // id
         tab: sTab, // 分类
         reply_count: oItem.reply_count, // 回复数
         visit_count: oItem.visit_count, // 访问数
-        last_reply_at: moment(oItem.last_reply_at).fromNow(), // 最后一次回复时间
+        last_reply_at: wx.moment(oItem.last_reply_at).fromNow(), // 最后一次回复时间
         title: oItem.title, // 标题
         content: this.fnFmtTopicContentToSummary(oItem.content), // 内容
         avatar_url: oItem.author.avatar_url, // 作者头像
         loginname: oItem.author.loginname, // 作者名称
-        create_at: moment(oItem.create_at).format('YYYY-MM-DD HH:mm:ss') // 创建时间
+        create_at: wx.moment(oItem.create_at).format('YYYY-MM-DD HH:mm:ss') // 创建时间
       };
     });
     return aTopicList;
