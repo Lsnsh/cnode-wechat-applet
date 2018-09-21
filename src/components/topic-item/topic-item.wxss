@@ -13,6 +13,7 @@
   float: right;
 }
 .topic-container .topic-header .topic-title {
+  color: #171717;
   font-size: 32rpx;
   margin-bottom: 30rpx;
 }

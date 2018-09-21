@@ -1,7 +1,7 @@
 
 .topic-tag {
   display: inline-block;
-  padding: 5rpx 10rpx;
+  padding: 2rpx 10rpx;
   color: #747474;
   background: #EEEEEE;
   font-style: 28rpx;

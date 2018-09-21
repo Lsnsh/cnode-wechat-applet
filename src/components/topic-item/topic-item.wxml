@@ -1,4 +1,4 @@
-<view class="topic-container">
+<navigator class="topic-container" url="/pages/topic/topic?id={{data.id}}">
   <view class="topic-header">
     <view style="margin-bottom: 20rpx;">
       <!-- 主题标签 -->
@@ -33,4 +33,4 @@
       <text>{{ data.create_at }}</text>
     </view>
   </view>
-</view>
+</navigator>

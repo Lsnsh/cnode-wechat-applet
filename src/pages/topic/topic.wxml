@@ -1,0 +1,26 @@
+<view class="topic-container">
+  <h3>{{oTopicDetail.title}}</h3>
+  <!-- 主题基本信息 -->
+  <view class="topic-info">
+    <view class="topic-avatar-conainer">
+      <image class="w-p100 h-p100" src="{{oTopicDetail.avatar_url}}" />
+    </view>
+    <topic-tag type="{{oTopicDetail.tab}}"></topic-tag>
+    <text>{{oTopicDetail.loginname}}</text>
+    <view>
+      <text>{{oTopicDetail.create_at}}创建</text>
+      <text>·</text>
+      <text>{{oTopicDetail.visit_count}}</text>
+    </view>
+    <view>{{oTopicDetail.is_collect ? '收藏' : '未收藏'}}</view>
+  </view>
+  <!-- 内容 -->
+  <rich-text nodes="{{ oTopicDetail.content }}"></rich-text>
+  <!-- 评论列表 -->
+  <view class="comment-list">
+    <view class="comment-item" wx:for="{{oTopicDetail.replies}}" wx:key="item.id">
+      <view>{{item.author.loginname}}</view>
+      <rich-text nodes="{{item.content}}"></rich-text>
+    </view>
+  </view>
+</view>

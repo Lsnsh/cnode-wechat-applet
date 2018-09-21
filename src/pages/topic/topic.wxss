@@ -1,0 +1,15 @@
+.topic-container {
+  padding: 30rpx;
+}
+
+.topic-avatar-conainer {
+  width: 100rpx;
+  height: 100rpx;
+}
+.comment-list {
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.comment-item {
+  border: 1rpx solid #ccddff;
+}
