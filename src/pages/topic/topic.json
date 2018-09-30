@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "wemark": "/components/wemark/wemark",
     "topic-tag": "/components/topic-tag/topic-tag"
   },
   "backgroundTextStyle":"dark",

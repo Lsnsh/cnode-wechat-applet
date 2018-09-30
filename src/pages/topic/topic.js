@@ -25,7 +25,10 @@ Page({
     wx.dc.topic
       .detail(
         {
-          urlData: oUrlData
+          urlData: oUrlData,
+          data: {
+            mdrender: false
+          }
         },
         this.fnTopicDetailDataFormatter
       )

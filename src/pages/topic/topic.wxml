@@ -22,7 +22,7 @@
     </view>
     <!-- 内容 -->
     <view class="topic-content">
-      <rich-text nodes="{{ oTopicDetail.content }}"></rich-text>
+      <wemark type="wemark" md="{{oTopicDetail.content}}" highlight link></wemark>
     </view>
   </view>
   <!-- 评论列表 -->
