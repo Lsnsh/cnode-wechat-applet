@@ -1,5 +1,5 @@
 {
-  "usingComponent": {
+  "usingComponents": {
     "topic-tag": "/components/topic-tag/topic-tag"
   },
   "backgroundTextStyle":"dark",

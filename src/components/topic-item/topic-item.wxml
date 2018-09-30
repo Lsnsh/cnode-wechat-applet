@@ -23,9 +23,9 @@
   <view class="topic-footer clear-float">
     <view class="topic-footer-left clear-float">
       <!-- 主题作者头像 -->
-      <image class="topic-author-avatar" wx:if="data.avatar_url" src="{{ data.avatar_url }}" />
+      <image class="topic-author-avatar" wx:if="{{ data.avatar_url }}" src="{{ data.avatar_url }}" />
       <!-- 主题作者名称 -->
-      <text class="topic-author-name" wx:if="data.loginname">{{ data.loginname }}</text>
+      <text class="topic-author-name" wx:if="{{ data.loginname }}">{{ data.loginname }}</text>
     </view>
     <!-- 主题创建时间 -->
     <view class="topic-footer-right">

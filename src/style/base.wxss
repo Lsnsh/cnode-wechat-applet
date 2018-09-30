@@ -1,6 +1,57 @@
+/* 垂直水平对齐 */
+.vh-parent {
+  position: relative;
+}
+.v {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.h {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.vh {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* 宽高 */
 .w-p100 {
   width: 100%;
 }
 .h-p100 {
   height: 100%;
+}
+/* 浮动 */
+.clf::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.fl-left {
+  float: left;
+}
+.fl-right {
+  float: right;
+}
+/* 圆角 */
+.rounded-p50 {
+  border-radius: 50%;
+}
+/* 字体 */
+.fw-300 {
+  font-weight: 300;
+}
+.fw-500 {
+  font-weight: 500;
+}
+/* 颜色 */
+.color-green {
+  color: #80bd01;
+}
+.color-grey {
+  color: #7C7C7C;
 }

@@ -1,5 +1,3 @@
-import { formatTime } from '../../utils/util';
-
 Component({
   properties: {
     data: {

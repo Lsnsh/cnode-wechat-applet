@@ -1,26 +1,51 @@
 <view class="topic-container">
-  <h3>{{oTopicDetail.title}}</h3>
-  <!-- 主题基本信息 -->
-  <view class="topic-info">
-    <view class="topic-avatar-conainer">
-      <image class="w-p100 h-p100" src="{{oTopicDetail.avatar_url}}" />
+  <view class="topic-main">
+    <!-- 标题 -->
+    <h3 class="fw-500">{{oTopicDetail.title}}</h3>
+    <!-- 基本信息 -->
+    <view class="topic-info vh-parent">
+      <view class="topic-info-left fl-left">
+        <image class="w-p100 h-p100 rounded-p50" src="{{oTopicDetail.avatar_url}}" />
+      </view>
+      <view class="topic-info-center">
+        <view style="margin-bottom: 15rpx;">
+          <topic-tag type="{{oTopicDetail.tab}}" style="margin-right: 15rpx;"></topic-tag>
+          <text>{{oTopicDetail.loginname}}</text>
+        </view>
+        <view class="color-grey" style="font-size: 28rpx;">
+          <text>{{oTopicDetail.create_at}}创建</text>
+          <text style="padding: 0 5rpx;">·</text>
+          <text>{{oTopicDetail.visit_count}}次浏览</text>
+        </view>
+      </view>
+      <view class="v" style="right: 10rpx;">{{oTopicDetail.is_collect ? '收藏' : '未收藏'}}</view>
     </view>
-    <topic-tag type="{{oTopicDetail.tab}}"></topic-tag>
-    <text>{{oTopicDetail.loginname}}</text>
-    <view>
-      <text>{{oTopicDetail.create_at}}创建</text>
-      <text>·</text>
-      <text>{{oTopicDetail.visit_count}}</text>
+    <!-- 内容 -->
+    <view class="topic-content">
+      <rich-text nodes="{{ oTopicDetail.content }}"></rich-text>
     </view>
-    <view>{{oTopicDetail.is_collect ? '收藏' : '未收藏'}}</view>
   </view>
-  <!-- 内容 -->
-  <rich-text nodes="{{ oTopicDetail.content }}"></rich-text>
   <!-- 评论列表 -->
-  <view class="comment-list">
-    <view class="comment-item" wx:for="{{oTopicDetail.replies}}" wx:key="item.id">
-      <view>{{item.author.loginname}}</view>
-      <rich-text nodes="{{item.content}}"></rich-text>
+  <view class="topic-comment-list">
+    <view class="topic-comment-list-header">{{oTopicDetail.replies.length}}条回复</view>
+    <view class="topic-comment-item" wx:for="{{oTopicDetail.replies}}" wx:key="item.id">
+      <view class="vh-parent clf">
+        <view class="topic-comment-left fl-left">
+          <image class="w-p100 h-p100 rounded-p50" src="{{item.author.avatar_url}}" />
+        </view>
+        <view class="topic-comment-center">
+          <view style="margin-bottom: 15rpx;">{{item.loginname}}</view>
+          <view class="color-grey" style="font-size: 28rpx;">
+            <text class="color-green">{{index + 1}}楼</text>
+            <text style="padding: 0 5rpx;">·</text>
+            <text>{{item.create_at}}</text>
+          </view>
+        </view>
+        <view class="v" style="right: 10rpx;font-size: 24rpx;">{{item.ups.length}}</view>
+      </view>
+      <view class="topic-comment-content">
+        <rich-text nodes="{{item.content}}"></rich-text>
+      </view>
     </view>
   </view>
 </view>

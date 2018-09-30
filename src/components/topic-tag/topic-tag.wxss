@@ -4,7 +4,7 @@
   padding: 2rpx 10rpx;
   color: #747474;
   background: #EEEEEE;
-  font-style: 28rpx;
+  font-size: 28rpx;
   border-radius: 6rpx;
 }
 .topic-tag-top {

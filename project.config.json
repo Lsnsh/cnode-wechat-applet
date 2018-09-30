@@ -35,8 +35,15 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": 0,
+					"name": "\b主题详情",
+					"pathName": "pages/topic/topic",
+					"query": "id=5b911f1837b3005a0b0e6c16"
+				}
+			]
 		}
 	}
 }

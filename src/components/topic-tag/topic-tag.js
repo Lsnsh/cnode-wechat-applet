@@ -1,4 +1,3 @@
-// components/topic-tag/topic-tag.js
 Component({
   properties: {
     type: {
