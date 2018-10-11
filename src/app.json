@@ -1,12 +1,31 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/topic/topic"
+    "pages/topic/topic",
+    "pages/mine/mine"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tabbar/icon_all.png",
+        "selectedIconPath": "images/tabbar/icon_all_active.png",
+        "text": "全部"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/tabbar/icon_mine.png",
+        "selectedIconPath": "images/tabbar/icon_mine_active.png",
+        "text": "我的"
+      }
+    ]
   }
 }
