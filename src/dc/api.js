@@ -47,3 +47,64 @@ export class Topic extends Base {
     );
   }
 }
+
+// 主题收藏
+export class TopicCollect extends Base {
+  constructor() {
+    super();
+    this.sListUrl = '/topic_collect/:loginname';
+    this.sCollectUrl = '/topic_collect/collect';
+    this.sDeCollectUrl = '/topic_collect/de_collect';
+  }
+  /**
+   * 用户所收藏的主题列表
+   * @param {Object} oOption
+   * @param {Function} fnDataFormatter
+   */
+  list(oOption = {}, fnDataFormatter) {
+    return fnDataProcess(
+      {
+        url: this.sListUrl,
+        method: 'post',
+        ...oOption
+      },
+      fnDataFormatter
+    );
+  }
+  /**
+   * 收藏主题
+   * post 参数
+   * accesstoken String 用户的 accessToken
+   * topic_id String 主题的id
+   * @param {Object} oOption
+   * @param {Function} fnDataFormatter
+   */
+  collect(oOption = {}, fnDataFormatter) {
+    return fnDataProcess(
+      {
+        url: this.sCollectUrl,
+        method: 'post',
+        ...oOption
+      },
+      fnDataFormatter
+    );
+  }
+  /**
+   * 取消收藏主题
+   * 接收 post 参数
+   * accesstoken String 用户的 accessToken
+   * topic_id String 主题的id
+   * @param {Object} oOption
+   * @param {Function} fnDataFormatter
+   */
+  deCollect(oOption = {}, fnDataFormatter) {
+    return fnDataProcess(
+      {
+        url: this.sDeCollectUrl,
+        method: 'post',
+        ...oOption
+      },
+      fnDataFormatter
+    );
+  }
+}

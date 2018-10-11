@@ -1,8 +1,9 @@
-import { Topic } from './api';
+import { Topic, TopicCollect } from './api';
 
 wx.initDataCenter = function() {
   wx.dc = {
-    topic: new Topic()
+    topic: new Topic(),
+    topicCollect: new TopicCollect()
   };
 };
 

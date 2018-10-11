@@ -17,7 +17,7 @@ export default (oOption = {}, fnDataFormatter) => {
   return new Promise((resolve, reject) => {
     request(oOption)
       .then(res => {
-        if (res.success) {
+        if (res && res.success) {
           if (typeof fnDataFormatter === 'function') {
             resolve(fnDataFormatter(res.data));
           } else {
