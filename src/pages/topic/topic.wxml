@@ -18,7 +18,7 @@
           <text>{{oTopicDetail.visit_count}}次浏览</text>
         </view>
       </view>
-      <view class="v" style="right: 10rpx;">{{oTopicDetail.is_collect ? '收藏' : '未收藏'}}</view>
+      <button class="v" size="mini" style="right: 10rpx;" bindtap="fnTapSwitchTopicCollectStatus">{{oTopicDetail.is_collect ? '已收藏' : '收藏'}}</button>
     </view>
     <!-- 内容 -->
     <view class="topic-content">
@@ -31,7 +31,7 @@
     <view class="topic-comment-item" wx:for="{{oTopicDetail.replies}}" wx:key="item.id">
       <view class="vh-parent clf">
         <view class="topic-comment-left fl-left">
-          <image class="w-p100 h-p100 rounded-p50" src="{{item.author.avatar_url}}" />
+          <image class="w-p100 h-p100 rounded-p50" src="{{item.avatar_url}}" />
         </view>
         <view class="topic-comment-center">
           <view style="margin-bottom: 15rpx;">{{item.loginname}}</view>
@@ -41,10 +41,13 @@
             <text>{{item.create_at}}</text>
           </view>
         </view>
-        <view class="v" style="right: 10rpx;font-size: 24rpx;">{{item.ups.length}}</view>
+        <view class="v" style="color: #757575;right: 10rpx;font-size: 24rpx;">
+          <i class="icon icon-up" style="font-size: 50rpx;margin-right: 10rpx;"></i>
+          <text class="inbl vtal-top" style="height: 50rpx;line-height: 60rpx;">{{item.ups.length}}</text>
+        </view>
       </view>
       <view class="topic-comment-content">
-        <rich-text nodes="{{item.content}}"></rich-text>
+        <wemark type="wemark" md="{{item.content}}" highlight link></wemark>
       </view>
     </view>
   </view>

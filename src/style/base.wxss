@@ -18,6 +18,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+/* 垂直对齐方式 */
+.vtal-top {
+  vertical-align: top;
+}
+/* 元素属性 */
+.inbl {
+  display: inline-block;
+}
 /* 宽高 */
 .w-p100 {
   width: 100%;

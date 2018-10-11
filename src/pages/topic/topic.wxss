@@ -28,11 +28,9 @@
   padding: 20rpx;
 }
 .topic-comment-item {
-  padding: 20rpx;
-  border-top: 1rpx solid #7C7C7C;
+  padding: 30rpx 20rpx 0 20rpx;
+  border-top: 1rpx solid #F1F1F1;
 }
 .topic-comment-content {
-  padding-top: 15rpx;
-  padding-bottom: 15rpx;
   font-size: 28rpx;
 }
