@@ -22,6 +22,10 @@
 .vtal-top {
   vertical-align: top;
 }
+/* 水平对齐方式 */
+.ta-c {
+  text-align: center;
+}
 /* 元素属性 */
 .inbl {
   display: inline-block;
@@ -57,6 +61,9 @@
   font-weight: 500;
 }
 /* 颜色 */
+.color-white {
+  color: #ffffff;
+}
 .color-green {
   color: #80bd01;
 }

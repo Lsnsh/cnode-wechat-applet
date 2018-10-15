@@ -35,13 +35,19 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": 0,
 					"name": "\b主题详情",
 					"pathName": "pages/topic/topic",
 					"query": "id=5b9b5d2ba5ed9d2159fa312e"
+				},
+				{
+					"id": 1,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"query": ""
 				}
 			]
 		}

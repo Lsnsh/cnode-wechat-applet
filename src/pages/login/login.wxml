@@ -1,0 +1,19 @@
+<view>
+  <!-- logo -->
+  <view class="login-header">
+    <image class="logo" src="/images/cnodejs_light.svg"></image>
+    <view class="color-white">cnodejs.org</view>
+  </view>
+  <!-- login -->
+  <view class="login-main">
+    <view>
+      <input class="login-input" type="text" placeholder="Access Token:" focus />
+      <view class="login-btn">登录</view>
+    </view>
+    <view class="login-third color-grey clf">
+      <view style="flex: 1;"><i class="icon icon-scan" style="margin-right: 16rpx"></i>扫码登录</view>
+      <view style="flex: 1;"><i class="icon icon-github" style="margin-right: 16rpx"></i>GitHub登录</view>
+    </view>
+  </view>
+  <view class="ta-c color-green" style="font-size: 28rpx;">如何获取Access Token ？</view>
+</view>
