@@ -7,8 +7,8 @@
   <!-- login -->
   <view class="login-main">
     <view>
-      <input class="login-input" type="text" placeholder="Access Token:" focus />
-      <view class="login-btn">登录</view>
+      <input class="login-input" bindinput="fnInputAccessToken" type="text" placeholder="Access Token:" focus />
+      <view class="login-btn" bindtap="fnTapLogin">登录</view>
     </view>
     <view class="login-third color-grey clf">
       <view style="flex: 1;"><i class="icon icon-scan" style="margin-right: 16rpx"></i>扫码登录</view>

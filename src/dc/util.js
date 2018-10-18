@@ -18,6 +18,13 @@ export default (oOption = {}, fnDataFormatter) => {
     request(oOption)
       .then(res => {
         if (res && res.success) {
+          // 如果没有data字段，将当前res对象摊开
+          if (!res.data) {
+            delete res.success;
+            res.data = {
+              ...res
+            };
+          }
           if (typeof fnDataFormatter === 'function') {
             resolve(fnDataFormatter(res.data));
           } else {

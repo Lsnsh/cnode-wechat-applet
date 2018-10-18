@@ -108,3 +108,46 @@ export class TopicCollect extends Base {
     );
   }
 }
+
+export class User extends Base {
+  constructor() {
+    super();
+    this.sAuthUrl = '/accesstoken';
+    this.sDetailUrl = '/user/:loginname';
+  }
+  /**
+   * 身份验证
+   * 接收 post 参数
+   * accesstoken String 用户的 accessToken
+   * 如果成功匹配上用户，返回用户信息。否则 403
+   * @param {Object} oOption
+   * @param {Function} fnDataFormatter
+   */
+  auth(oOption = {}, fnDataFormatter) {
+    return fnDataProcess(
+      {
+        url: this.sAuthUrl,
+        method: 'post',
+        ...oOption
+      },
+      fnDataFormatter
+    );
+  }
+  /**
+   * 用户详情
+   * url path 参数
+   * loginname String 用户名称
+   * @param {Object} oOption
+   * @param {Function} fnDataFormatter
+   */
+  detail(oOption = {}, fnDataFormatter) {
+    return fnDataProcess(
+      {
+        url: this.sDetailUrl,
+        method: 'get',
+        ...oOption
+      },
+      fnDataFormatter
+    );
+  }
+}
