@@ -1,1 +1,24 @@
-<text>src/pages/mine/mine.wxml</text>
+<view>
+  <!-- 用户基本信息 -->
+  <view class="user-info-container ta-c">
+    <navigator class="user-avatar-wrap" url="/pages/login/login">
+      <image class="user-avatar" src="/images/tabbar/icon_mine.png" />
+    </navigator>
+    <view>
+      <view>点击头像登录</view>
+    </view>
+  </view>
+  <!-- 操作菜单 -->
+  <view class="menu-list">
+    <navigator
+      wx:for="{{aMenuList}}"
+      wx:key="{{index}}"
+      url="{{item.url}}"
+      open-type="{{item.open_type}}"
+      class="menu-item"
+    >
+      <i class="icon {{item.icon_class}}"></i>
+      <view class="inbl vtal-top">{{item.text}}</view>
+    </navigator>
+  </view>
+</view>

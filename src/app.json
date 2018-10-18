@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/topic/topic",
     "pages/mine/mine",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/message/message",
+    "pages/about/about"
   ],
   "window": {
     "backgroundTextStyle": "light",

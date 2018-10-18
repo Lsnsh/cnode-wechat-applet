@@ -22,6 +22,9 @@
 .vtal-top {
   vertical-align: top;
 }
+.vtal-md {
+  vertical-align: middle;
+}
 /* 水平对齐方式 */
 .ta-c {
   text-align: center;
