@@ -1,5 +1,6 @@
 Page({
   data: {
+    bIsReady: false, // 页面是否准备就绪
     sTopicId: '', // 主题id
     oTopicDetail: {} // 主题详情
   },
@@ -58,17 +59,23 @@ Page({
         this.fnTopicDetailDataFormatter
       )
       .then(res => {
-        console.log(res);
         if (res) {
           this.setData({
+            bIsReady: true,
             oTopicDetail: res
           });
         }
-        // 停止加载效果
-        wx.stopPullDownRefresh();
-        wx.hideNavigationBarLoading();
+        // 主题内容渲染需要一些时间，延长loading状态
+        setTimeout(() => {
+          // 停止加载效果
+          wx.stopPullDownRefresh();
+          wx.hideNavigationBarLoading();
+        }, 100);
       })
       .catch(() => {
+        this.setData({
+          bIsReady: true
+        });
         // 停止加载效果
         wx.stopPullDownRefresh();
         wx.hideNavigationBarLoading();

@@ -1,4 +1,4 @@
-<view class="topic-container">
+<view class="topic-container fadein-init {{bIsReady ? 'fadein' : ''}}">
   <view class="topic-main">
     <!-- 标题 -->
     <h3 class="fw-500">{{oTopicDetail.title}}</h3>

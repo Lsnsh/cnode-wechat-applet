@@ -1,10 +1,11 @@
 Page({
   data: {
+    bIsReady: false, // 页面是否准备就绪
     aTopicList: [], // 主题列表
     oTopicListReqParams: {
       tab: '', // 页数
       page: 1, // 主题分类。目前有 ask share job good
-      limit: 30, // 每一页的主题数量
+      limit: 10, // 每一页的主题数量
       mdrender: 'true' // 当为 'false' 时，不渲染。默认为 'true'，渲染出现的所有 markdown 格式文本。
     }
   },
@@ -64,11 +65,17 @@ Page({
         // 停止加载效果
         wx.stopPullDownRefresh();
         wx.hideNavigationBarLoading();
+        this.setData({
+          bIsReady: true
+        });
       })
       .catch(() => {
         // 停止加载效果
         wx.stopPullDownRefresh();
         wx.hideNavigationBarLoading();
+        this.setData({
+          bIsReady: true
+        });
       });
   },
   // 主题列表数据适配器
