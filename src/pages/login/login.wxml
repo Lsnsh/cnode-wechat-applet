@@ -8,11 +8,11 @@
   <view class="login-main">
     <view>
       <input class="login-input" bindinput="fnInputAccessToken" type="text" placeholder="Access Token:" focus />
-      <view class="login-btn" bindtap="fnTapLogin">登录</view>
+      <view class="login-btn" bindtap="fnTapLoginByLoginBtn">登录</view>
     </view>
     <view class="login-third color-grey clf">
-      <view style="flex: 1;"><i class="icon icon-scan" style="margin-right: 16rpx"></i>扫码登录</view>
-      <view style="flex: 1;"><i class="icon icon-github" style="margin-right: 16rpx"></i>GitHub登录</view>
+      <view style="flex: 1;" bindtap="fnTapLoginByScanCode"><i class="icon icon-scan" style="margin-right: 16rpx"></i>扫码登录</view>
+      <view style="flex: 1;color: #cecece;" bindtap="fnTapLoginByGitHub"><i class="icon icon-github" style="margin-right: 16rpx"></i>GitHub登录</view>
     </view>
   </view>
   <view class="ta-c color-green" style="font-size: 28rpx;">如何获取Access Token ？</view>

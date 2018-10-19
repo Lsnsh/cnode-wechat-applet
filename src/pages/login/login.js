@@ -7,18 +7,37 @@ Page({
       sAccessToken: e.detail.value
     });
   },
-  fnTapLogin() {
+  // 通过点击登录按钮登录
+  fnTapLoginByLoginBtn() {
+    this.fnNetUserLogin(this.data.sAccessToken);
+  },
+  // 通过扫码登录
+  fnTapLoginByScanCode() {
+    wx.scanCode({
+      success: res => {
+        console.log(res);
+        if (res.result) {
+          this.fnNetUserLogin(res.result);
+        }
+      },
+      fail: () => {}
+    });
+  },
+  // 通过GitHub账号登录
+  fnTapLoginByGitHub() {},
+  // 用户登录
+  fnNetUserLogin(sAccessToken) {
     // 显示标题栏加载效果
     wx.showNavigationBarLoading();
     wx.dc.user
       .auth({
         data: {
-          accesstoken: this.data.sAccessToken
+          accesstoken: sAccessToken
         }
       })
       .then(res => {
         if (res) {
-          wx.setStorageSync('accesstoken', this.data.sAccessToken);
+          wx.setStorageSync('accesstoken', sAccessToken);
           wx.setStorageSync('avatar_url', res.avatar_url);
           wx.setStorageSync('uid', res.id);
           wx.setStorageSync('loginname', res.loginname);

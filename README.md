@@ -1,6 +1,6 @@
 # cnode-wechat-applet
 
-cnode社区-微信小程序
+cnode社区-微信小程序版
 
 ## 命名规范
 
