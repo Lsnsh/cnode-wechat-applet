@@ -1,11 +1,18 @@
-<view>
+<view class="fadein-init {{bIsReady ? 'fadein': ''}}">
   <!-- 用户基本信息 -->
   <view class="user-info-container ta-c">
-    <navigator class="user-avatar-wrap" url="/pages/login/login">
-      <image class="user-avatar" src="/images/tabbar/icon_mine.png" />
-    </navigator>
+    <block wx:if="{{!bIsLogin}}">
+      <navigator class="user-avatar-wrap mlr-auto" url="/pages/login/login" hover-class="none">
+        <image class="user-avatar" src="{{oUserInfo.avatar_url}}" />
+      </navigator>
+    </block>
+    <block wx:else>
+      <view class="user-avatar-wrap mlr-auto">
+        <image class="user-avatar" src="{{oUserInfo.avatar_url}}" />
+      </view>
+    </block>
     <view>
-      <view>点击头像登录</view>
+      <view>{{oUserInfo.loginname}}</view>
     </view>
   </view>
   <!-- 操作菜单 -->
@@ -20,5 +27,9 @@
       <i class="icon {{item.icon_class}}"></i>
       <view class="inbl vtal-top">{{item.text}}</view>
     </navigator>
+    <view class="menu-item" bindtap="fnTapLogout" wx:if="{{bIsLogin}}">
+      <i class="icon icon-logout"></i>
+      <view class="inbl vtal-top">注销</view>
+    </view>
   </view>
 </view>

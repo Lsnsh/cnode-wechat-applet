@@ -37,10 +37,8 @@ Page({
       })
       .then(res => {
         if (res) {
-          wx.setStorageSync('accesstoken', sAccessToken);
-          wx.setStorageSync('avatar_url', res.avatar_url);
-          wx.setStorageSync('uid', res.id);
-          wx.setStorageSync('loginname', res.loginname);
+          wx.setStorageSync('sAccessToken', sAccessToken);
+          wx.setStorageSync('oUserInfo', res);
           wx.switchTab({
             url: '/pages/mine/mine'
           });

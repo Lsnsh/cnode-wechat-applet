@@ -29,6 +29,10 @@
 .ta-c {
   text-align: center;
 }
+.mlr-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
 /* 元素属性 */
 .inbl {
   display: inline-block;
@@ -71,5 +75,17 @@
   color: #80bd01;
 }
 .color-grey {
-  color: #7C7C7C;
+  color: #7c7c7c;
+}
+/* 谈入谈出 */
+.fadein-init {
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in;
+  -moz-transition: opacity 0.2s ease-in;
+  -ms-transition: opacity 0.2s ease-in;
+  -o-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+}
+.fadein {
+  opacity: 1;
 }

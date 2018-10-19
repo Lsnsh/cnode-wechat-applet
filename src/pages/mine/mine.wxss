@@ -4,11 +4,13 @@
   background: #fbfbfb;
 }
 .user-info-container .user-avatar-wrap {
+  width: 100rpx;
+  height: 100rpx;
   margin-bottom: 20rpx;
 }
 .user-info-container .user-avatar {
-  width: 100rpx;
-  height: 100rpx;
+  width: 100%;
+  height: 100%;
 }
 .menu-list {
   padding: 30rpx;
