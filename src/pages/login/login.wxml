@@ -7,7 +7,7 @@
   <!-- login -->
   <view class="login-main">
     <view>
-      <input class="login-input" bindinput="fnInputAccessToken" type="text" placeholder="Access Token:" focus />
+      <input class="login-input" bindinput="fnInputAccessToken" type="text" placeholder="Access Token:" />
       <view class="login-btn" bindtap="fnTapLoginByLoginBtn">登录</view>
     </view>
     <view class="login-third color-grey clf">

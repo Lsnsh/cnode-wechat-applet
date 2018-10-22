@@ -1,3 +1,5 @@
+const app = getApp();
+
 Page({
   data: {
     sAccessToken: ''
@@ -58,11 +60,10 @@ Page({
       })
       .then(res => {
         if (res) {
+          app.globalData.bIsLogin = true;
           wx.setStorageSync('sAccessToken', sAccessToken);
           wx.setStorageSync('oUserInfo', res);
-          wx.switchTab({
-            url: '/pages/mine/mine'
-          });
+          wx.navigateBack();
           wx.hideNavigationBarLoading();
         }
       })
