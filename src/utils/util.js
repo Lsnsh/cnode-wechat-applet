@@ -1,19 +1,24 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
+const app = getApp();
 
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
-}
-
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
-}
-
-module.exports = {
-  formatTime: formatTime
+// 检查登录状态，未登录会弹出模态框引导用户登录
+export function fnCheckLogin() {
+  let bIsLogin = app.globalData.bIsLogin;
+  if (!bIsLogin) {
+    wx.showModal({
+      content: '该操作需要登录帐户，是否现在登录？',
+      confirmText: '登录',
+      success: res => {
+        if (res.confirm) {
+          wx.navigateTo({
+            url: '/pages/login/login'
+          });
+        }
+      },
+      complete() {
+        return false;
+      }
+    });
+  } else {
+    return true;
+  }
 }

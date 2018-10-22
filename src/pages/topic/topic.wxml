@@ -28,7 +28,7 @@
   <!-- 评论列表 -->
   <view class="topic-comment-list">
     <view class="topic-comment-list-header">{{oTopicDetail.replies.length}}条回复</view>
-    <view class="topic-comment-item" wx:for="{{oTopicDetail.replies}}" wx:key="item.id">
+    <view class="topic-comment-item" wx:for="{{oTopicDetail.replies}}" wx:key="{{index}}">
       <view class="vh-parent clf">
         <view class="topic-comment-left fl-left">
           <image class="w-p100 h-p100 rounded-p50" src="{{item.avatar_url}}" />

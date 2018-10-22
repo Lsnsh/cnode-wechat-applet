@@ -1,3 +1,5 @@
+import { fnCheckLogin } from '../../utils/util';
+
 Page({
   data: {
     bIsReady: false, // 页面是否准备就绪
@@ -10,13 +12,22 @@ Page({
       sTopicId: options.id
     });
   },
+  onShow() {
+    // 页面未准备就绪时，不重新刷新主题信息
+    if (this.data.bIsReady) {
+      this.fnFetchTopicDetail(this.data.sTopicId, true);
+    }
+  },
   onPullDownRefresh() {
     this.fnFetchTopicDetail(this.data.sTopicId);
   },
   onReachBottom() {},
   // 切换主题收藏状态
   fnTapSwitchTopicCollectStatus() {
-    this.fnNetSwitchTopicCollectStatus(!this.data.oTopicDetail.is_collect);
+    // 先检查用户登录状态
+    if (fnCheckLogin()) {
+      this.fnNetSwitchTopicCollectStatus(!this.data.oTopicDetail.is_collect);
+    }
   },
   // 切换主题收藏状态
   fnNetSwitchTopicCollectStatus(bIsCollect) {
@@ -24,7 +35,6 @@ Page({
     wx.showNavigationBarLoading();
     wx.dc.topicCollect[bIsCollect ? 'collect' : 'deCollect']({
       data: {
-        accesstoken: wx.getStorageSync('accesstoken'),
         topic_id: this.data.sTopicId
       }
     })
@@ -39,7 +49,7 @@ Page({
       });
   },
   // 获取主题详情
-  fnFetchTopicDetail(sTopicId) {
+  fnFetchTopicDetail(sTopicId, bIsOnShow) {
     if (!sTopicId) {
       return console.log('此话题不存在或已被删除。');
     }
@@ -60,10 +70,19 @@ Page({
       )
       .then(res => {
         if (res) {
-          this.setData({
-            bIsReady: true,
-            oTopicDetail: res
-          });
+          // 页面onShow时，更新主题部分信息
+          if (bIsOnShow) {
+            this.setData({
+              'oTopicDetail.tab': res.top ? 'top' : res.good ? 'good' : res.tab,
+              'oTopicDetail.visit_count': res.visit_count,
+              'oTopicDetail.is_collect': res.is_collect
+            });
+          } else {
+            this.setData({
+              bIsReady: true,
+              oTopicDetail: res
+            });
+          }
         }
         // 主题内容渲染需要一些时间，延长loading状态
         setTimeout(() => {
