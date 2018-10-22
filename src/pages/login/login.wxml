@@ -2,7 +2,7 @@
   <!-- logo -->
   <view class="login-header">
     <image class="logo" src="/images/cnodejs_light.svg"></image>
-    <view class="color-white">cnodejs.org</view>
+    <view class="color-white fw-300">cnodejs.org</view>
   </view>
   <!-- login -->
   <view class="login-main">
@@ -15,5 +15,5 @@
       <view style="flex: 1;color: #cecece;" bindtap="fnTapLoginByGitHub"><i class="icon icon-github" style="margin-right: 16rpx"></i>GitHub登录</view>
     </view>
   </view>
-  <view class="ta-c color-green" style="font-size: 28rpx;">如何获取Access Token ？</view>
+  <view class="ta-c color-green" style="font-size: 28rpx;" bindtap="fnTapHelpText">如何获取Access Token ？</view>
 </view>
