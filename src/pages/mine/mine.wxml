@@ -12,7 +12,7 @@
       </view>
     </block>
     <view>
-      <view>{{oUserInfo.loginname}}</view>
+      <view style="color: #707070;">{{oUserInfo.loginname}}</view>
     </view>
   </view>
   <!-- 操作菜单 -->

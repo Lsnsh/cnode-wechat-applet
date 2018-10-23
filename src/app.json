@@ -14,14 +14,14 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#2c2c2c",
-    "selectedColor": "#80bd01",
+    "color": "#707070",
+    "selectedColor": "#515151",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/tabbar/icon_all.png",
-        "selectedIconPath": "images/tabbar/icon_all_active.png",
-        "text": "全部"
+        "iconPath": "images/tabbar/icon_home.png",
+        "selectedIconPath": "images/tabbar/icon_home_active.png",
+        "text": "主页"
       },
       {
         "pagePath": "pages/mine/mine",
