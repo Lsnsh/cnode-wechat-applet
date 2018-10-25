@@ -1,3 +1,16 @@
-<view class="fadein-init {{bIsReady ? 'fadein' : ''}}">
+<view class="home-page-container fadein-init {{bIsReady ? 'fadein' : ''}}">
+  <!-- 主题分类tabBar -->
+  <view class="topic-tabbar">
+    <view
+      class="topic-tabbar-item {{ nActiveTabIndex === index ? 'topic-tabbar-item-active' : '' }}"
+      wx:for="{{aTabBarList}}"
+      wx:key="{{index}}"
+      data-index="{{index}}"
+      data-tab="{{item.tab}}"
+      bindtap="fnTapSwitchTab"
+    >
+      <text>{{item.text}}</text>
+    </view>
+  </view>
   <topic-list data="{{aTopicList}}"></topic-list>
 </view>

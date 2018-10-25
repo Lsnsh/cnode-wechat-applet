@@ -1,10 +1,33 @@
 Page({
   data: {
     bIsReady: false, // 页面是否准备就绪
+    nActiveTabIndex: 0, // 当前处于活动状态的tab
+    aTabBarList: [
+      {
+        text: '全部',
+        tab: ''
+      },
+      {
+        text: '精华',
+        tab: 'good'
+      },
+      {
+        text: '分享',
+        tab: 'share'
+      },
+      {
+        text: '问答',
+        tab: 'ask'
+      },
+      {
+        text: '招聘',
+        tab: 'job'
+      }
+    ], // tab列表
     aTopicList: [], // 主题列表
     oTopicListReqParams: {
-      tab: '', // 页数
-      page: 1, // 主题分类。目前有 ask share job good
+      tab: '', // 主题分类。目前有 ask share job good
+      page: 1, // 页数
       limit: 10, // 每一页的主题数量
       mdrender: 'true' // 当为 'false' 时，不渲染。默认为 'true'，渲染出现的所有 markdown 格式文本。
     }
@@ -26,10 +49,21 @@ Page({
     // 下滑加载时，将页码累加
     this.data.oTopicListReqParams.page++;
     this.setData({
-      oTopicListReqParams: this.data.oTopicListReqParams
+      'oTopicListReqParams.page': this.data.oTopicListReqParams.page
     });
     // 追加主题列表数据
     this.fnNetRTopicList(true);
+  },
+  // 切换tab选项卡
+  fnTapSwitchTab(e) {
+    let oDataSet = e.currentTarget.dataset;
+    // 更新为当前活动的tab
+    this.setData({
+      nActiveTabIndex: oDataSet.index,
+      'oTopicListReqParams.tab': oDataSet.tab
+    });
+    // 更新主题列表数据
+    this.fnNetRTopicList();
   },
   // 过滤html标签
   fnFilterHtmlTag(sText = '') {
