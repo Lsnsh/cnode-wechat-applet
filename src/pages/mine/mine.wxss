@@ -1,7 +1,9 @@
 .user-info-container {
+  height: 400rpx;
   padding: 100rpx;
   margin-bottom: 30rpx;
   background: #fbfbfb;
+  box-sizing: border-box;
 }
 .user-info-container .user-avatar-wrap {
   width: 100rpx;
