@@ -66,7 +66,7 @@ Page({
             mdrender: false
           }
         },
-        this.fnTopicDetailDataFormatter
+        this.fnTopicDetailDataModel
       )
       .then(res => {
         if (res) {
@@ -100,7 +100,7 @@ Page({
         wx.hideNavigationBarLoading();
       });
   },
-  fnTopicDetailDataFormatter(oData = {}) {
+  fnTopicDetailDataModel(oData = {}) {
     if (!oData.author) {
       oData.author = {};
     }

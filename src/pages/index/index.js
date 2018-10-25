@@ -84,7 +84,7 @@ Page({
     // 显示标题栏加载效果
     wx.showNavigationBarLoading();
     wx.dc.topic
-      .list(this.data.oTopicListReqParams, this.fnTopicListDataFormatter)
+      .list(this.data.oTopicListReqParams, this.fnTopicListDataModel)
       .then(res => {
         if (res) {
           let aNewTopicList = res;
@@ -112,8 +112,8 @@ Page({
         });
       });
   },
-  // 主题列表数据适配器
-  fnTopicListDataFormatter(aList) {
+  // 主题列表数据模型
+  fnTopicListDataModel(aList) {
     let aTopicList = [];
     if (!aList || (aList && !Array.isArray(aList))) {
       aList = [];

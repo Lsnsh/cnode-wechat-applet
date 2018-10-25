@@ -4,7 +4,7 @@ import CONFIG from '../config/index';
 
 const METHOD_EMUN = ['OPTIONS', 'GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'TRACE', 'CONNECT'];
 
-export default (oOption = {}, fnDataFormatter) => {
+export default (oOption = {}, fnDataModel) => {
   oOption.url = CONFIG.api.url + oOption.url;
   if (oOption.urlData) {
     oOption.url = fnCompileDynamicUrl(oOption.url, oOption.urlData);
@@ -25,8 +25,8 @@ export default (oOption = {}, fnDataFormatter) => {
               ...res
             };
           }
-          if (typeof fnDataFormatter === 'function') {
-            resolve(fnDataFormatter(res.data));
+          if (typeof fnDataModel === 'function') {
+            resolve(fnDataModel(res.data));
           } else {
             resolve(res.data);
           }

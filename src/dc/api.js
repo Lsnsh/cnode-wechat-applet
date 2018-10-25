@@ -16,16 +16,16 @@ export class Topic extends Base {
    * tab String 主题分类。目前有 ask share job good
    * limit Number 每一页的主题数量
    * mdrender String 当为 false 时，不渲染。默认为 true，渲染出现的所有 markdown 格式文本。
-   * @param {Function} fnDataFormatter 数据格式化函数
+   * @param {Function} fnDataModel 自定义数据模型函数
    */
-  list(oData = {}, fnDataFormatter) {
+  list(oData = {}, fnDataModel) {
     return fnDataProcess(
       {
         url: this.sListUrl,
         method: 'get',
         data: oData
       },
-      fnDataFormatter
+      fnDataModel
     );
   }
   /**
@@ -34,16 +34,16 @@ export class Topic extends Base {
    * get 参数
    * mdrender String 当为 false 时，不渲染。默认为 true，渲染出现的所有 markdown 格式文本。
    * accesstoken String 当需要知道一个主题是否被特定用户收藏以及对应评论是否被特定用户点赞时，才需要带此参数。会影响返回值中的 is_collect 以及 replies 列表中的 is_uped 值。
-   * @param {Function} fnDataFormatter
+   * @param {Function} fnDataModel
    */
-  detail(oOption = {}, fnDataFormatter) {
+  detail(oOption = {}, fnDataModel) {
     return fnDataProcess(
       {
         url: this.sDetailUrl,
         method: 'get',
         ...oOption
       },
-      fnDataFormatter
+      fnDataModel
     );
   }
 }
@@ -59,16 +59,16 @@ export class TopicCollect extends Base {
   /**
    * 用户所收藏的主题列表
    * @param {Object} oOption
-   * @param {Function} fnDataFormatter
+   * @param {Function} fnDataModel
    */
-  list(oOption = {}, fnDataFormatter) {
+  list(oOption = {}, fnDataModel) {
     return fnDataProcess(
       {
         url: this.sListUrl,
         method: 'post',
         ...oOption
       },
-      fnDataFormatter
+      fnDataModel
     );
   }
   /**
@@ -77,16 +77,16 @@ export class TopicCollect extends Base {
    * accesstoken String 用户的 accessToken
    * topic_id String 主题的id
    * @param {Object} oOption
-   * @param {Function} fnDataFormatter
+   * @param {Function} fnDataModel
    */
-  collect(oOption = {}, fnDataFormatter) {
+  collect(oOption = {}, fnDataModel) {
     return fnDataProcess(
       {
         url: this.sCollectUrl,
         method: 'post',
         ...oOption
       },
-      fnDataFormatter
+      fnDataModel
     );
   }
   /**
@@ -95,16 +95,16 @@ export class TopicCollect extends Base {
    * accesstoken String 用户的 accessToken
    * topic_id String 主题的id
    * @param {Object} oOption
-   * @param {Function} fnDataFormatter
+   * @param {Function} fnDataModel
    */
-  deCollect(oOption = {}, fnDataFormatter) {
+  deCollect(oOption = {}, fnDataModel) {
     return fnDataProcess(
       {
         url: this.sDeCollectUrl,
         method: 'post',
         ...oOption
       },
-      fnDataFormatter
+      fnDataModel
     );
   }
 }
@@ -121,16 +121,16 @@ export class User extends Base {
    * accesstoken String 用户的 accessToken
    * 如果成功匹配上用户，返回用户信息。否则 403
    * @param {Object} oOption
-   * @param {Function} fnDataFormatter
+   * @param {Function} fnDataModel
    */
-  auth(oOption = {}, fnDataFormatter) {
+  auth(oOption = {}, fnDataModel) {
     return fnDataProcess(
       {
         url: this.sAuthUrl,
         method: 'post',
         ...oOption
       },
-      fnDataFormatter
+      fnDataModel
     );
   }
   /**
@@ -138,16 +138,16 @@ export class User extends Base {
    * url path 参数
    * loginname String 用户名称
    * @param {Object} oOption
-   * @param {Function} fnDataFormatter
+   * @param {Function} fnDataModel
    */
-  detail(oOption = {}, fnDataFormatter) {
+  detail(oOption = {}, fnDataModel) {
     return fnDataProcess(
       {
         url: this.sDetailUrl,
         method: 'get',
         ...oOption
       },
-      fnDataFormatter
+      fnDataModel
     );
   }
 }
