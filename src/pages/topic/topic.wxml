@@ -27,9 +27,10 @@
   </view>
   <!-- 评论列表 -->
   <view class="topic-comment-list">
-    <view class="topic-comment-list-header">{{oTopicDetail.replies.length}}条回复</view>
+    <view class="topic-comment-list-header">{{oTopicDetail.replies.length}}条评论</view>
     <view class="topic-comment-item" wx:for="{{oTopicDetail.replies}}" wx:key="{{index}}">
       <view class="vh-parent clf">
+        <!-- 评论者信息 -->
         <view class="topic-comment-left fl-left">
           <image class="w-p100 h-p100 rounded-p50" src="{{item.avatar_url}}" />
         </view>
@@ -41,11 +42,19 @@
             <text>{{item.create_at}}</text>
           </view>
         </view>
-        <view class="v" style="color: #757575;right: 10rpx;font-size: 24rpx;">
-          <i class="icon icon-up" style="font-size: 50rpx;margin-right: 10rpx;"></i>
+        <!-- 点赞icon和点赞数 -->
+        <view
+          class="v"
+          style="color: #757575;right: 10rpx;font-size: 24rpx;"
+          data-id="{{item.id}}"
+          data-index="{{index}}"
+          bindtap="fnTapLikeCommentOrDislike"
+        >
+          <i class="icon icon-up {{item.is_uped ? 'color-green' : ''}}" style="font-size: 50rpx;margin-right: 10rpx;"></i>
           <text class="inbl vtal-top" style="height: 50rpx;line-height: 60rpx;">{{item.ups.length}}</text>
         </view>
       </view>
+      <!-- 评论内容 -->
       <view class="topic-comment-content">
         <wemark type="wemark" md="{{item.content}}" highlight link></wemark>
       </view>

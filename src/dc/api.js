@@ -109,6 +109,53 @@ export class TopicCollect extends Base {
   }
 }
 
+// 评论
+export class Reply extends Base {
+  constructor() {
+    super();
+    this.sCreateUrl = '/topic/:topic_id/replies';
+    this.sLikeOrDislikeUrl = '/reply/:reply_id/ups';
+  }
+  /**
+   * 新建评论
+   * post 参数
+   * accesstoken String 用户的 accessToken
+   * content String 评论的主体
+   * reply_id String 如果这个评论是对另一个评论的回复，请务必带上此字段。这样前端就可以构建出评论线索图。
+   * @param {Object} oOption
+   * @param {Function} fnDataModel
+   */
+  create(oOption = {}, fnDataModel) {
+    return fnDataProcess(
+      {
+        url: this.sCreateUrl,
+        method: 'post',
+        ...oOption
+      },
+      fnDataModel
+    );
+  }
+  /**
+   * 为评论点赞或取消点赞
+   * 接受 post 参数
+   * accesstoken String
+   * 接口会自动判断用户是否已点赞，如果否，则点赞；如果是，则取消点赞。点赞的动作反应在返回数据的 action 字段中，up or down。
+   * @param {Object} oOption
+   * @param {Function} fnDataModel
+   */
+  likeOrDislike(oOption = {}, fnDataModel) {
+    return fnDataProcess(
+      {
+        url: this.sLikeOrDislikeUrl,
+        method: 'post',
+        ...oOption
+      },
+      fnDataModel
+    );
+  }
+}
+
+// 用户
 export class User extends Base {
   constructor() {
     super();
