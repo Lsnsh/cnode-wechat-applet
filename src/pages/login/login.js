@@ -23,7 +23,6 @@ Page({
   fnTapLoginByScanCode() {
     wx.scanCode({
       success: res => {
-        console.log(res);
         if (res.result) {
           this.fnNetUserLogin(res.result);
         }

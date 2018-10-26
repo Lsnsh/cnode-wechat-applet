@@ -53,18 +53,19 @@ Page({
       'oTopicListReqParams.page': this.data.oTopicListReqParams.page
     });
     // 追加主题列表数据
-    this.fnNetRTopicList(true);
+    this.fnNetRTopicList(1);
   },
   // 切换tab选项卡
   fnTapSwitchTab(e) {
     let oDataSet = e.currentTarget.dataset;
-    // 更新为当前活动的tab
+    // 更新tab相关数据
     this.setData({
       nActiveTabIndex: oDataSet.index,
-      'oTopicListReqParams.tab': oDataSet.tab
+      'oTopicListReqParams.tab': oDataSet.tab,
+      'oTopicListReqParams.page': 1
     });
     // 更新主题列表数据
-    this.fnNetRTopicList();
+    this.fnNetRTopicList(2);
   },
   // 过滤html标签
   fnFilterHtmlTag(sText = '') {
@@ -79,9 +80,10 @@ Page({
   },
   /**
    * 获取主题列表
-   * @param {Boolean} bIsAppendTopicList 是否追加主题列表数据
+   * @param {Number} nFetchScene 列表数据获取的场景值
+   * 0 => 正常获取 1 => 页面触底后获取 2 => 切换tab后获取
    */
-  fnNetRTopicList(bIsAppendTopicList = false) {
+  fnNetRTopicList(nFetchScene = 0) {
     // 显示标题栏加载效果
     wx.showNavigationBarLoading();
     wx.dc.topic
@@ -89,13 +91,18 @@ Page({
       .then(res => {
         if (res) {
           let aNewTopicList = res;
-          if (bIsAppendTopicList) {
+          // 根据场景值不同做不同的处理
+          if (nFetchScene === 1) {
             // 将现有主题列表与刚获取到主题列表数据合并
             aNewTopicList = this.data.aTopicList.concat(aNewTopicList);
           }
           this.setData({
             aTopicList: aNewTopicList
           });
+          if (nFetchScene === 2) {
+            // 切换tab后，页面滚动到顶部
+            wx.pageScrollTo({ scrollTop: 0, duration: 0 });
+          }
         }
         // 停止加载效果
         wx.stopPullDownRefresh();
