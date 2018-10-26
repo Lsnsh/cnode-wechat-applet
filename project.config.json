@@ -5,16 +5,17 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"nodeModules": true
+		"nodeModules": true,
+		"uglifyFileName": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.3",
-	"appid": "wx1fbce108d3d37831",
+	"libVersion": "2.2.1",
+	"appid": "wxe413235d96e19da4",
 	"projectname": "cnode-wechat-applet",
 	"isGameTourist": false,
 	"condition": {
