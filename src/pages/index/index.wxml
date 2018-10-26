@@ -12,5 +12,7 @@
       <text>{{item.text}}</text>
     </view>
   </view>
-  <topic-list data="{{aTopicList}}"></topic-list>
+  <view class="topic-list-wrap">
+    <topic-list data="{{aTopicList}}"></topic-list>
+  </view>
 </view>

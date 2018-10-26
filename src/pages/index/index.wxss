@@ -24,3 +24,6 @@
   color: #80bd01;
   font-weight: 500;
 }
+.topic-list-wrap {
+  padding: 20rpx
+}

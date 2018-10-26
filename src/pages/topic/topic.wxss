@@ -1,9 +1,11 @@
 .topic-container {
+  padding: 20rpx;
 }
 .topic-main {
   padding: 30rpx;
-  margin-bottom: 12rpx;
+  margin-bottom: 20rpx;
   box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  border-radius: 8rpx;
 }
 .topic-info {
   padding-top: 20rpx;
@@ -23,6 +25,7 @@
   padding-top: 20rpx;
   padding-bottom: 20rpx;
   box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  border-radius: 8rpx;
 }
 .topic-comment-list-header {
   padding: 20rpx;

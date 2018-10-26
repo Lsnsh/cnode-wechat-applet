@@ -2,6 +2,7 @@ Page({
   data: {
     bIsReady: false, // 页面是否准备就绪
     nActiveTabIndex: 0, // 当前处于活动状态的tab
+    nContentLen: 60, // 主题卡片显示正文的长度
     aTabBarList: [
       {
         text: '全部',
@@ -71,10 +72,10 @@ Page({
     return sNewText;
   },
   // 格式化主题内容为摘要形式
-  fnFmtTopicContentToSummary(sContent, nLen = 120) {
+  fnFmtTopicContentToSummary(sContent, nContentLen = 60) {
     sContent = this.fnFilterHtmlTag(sContent);
     // 将主题内容，截取指定长度字符作为摘要
-    return sContent.slice(0, nLen);
+    return sContent.slice(0, nContentLen);
   },
   /**
    * 获取主题列表
@@ -130,7 +131,7 @@ Page({
         visit_count: oItem.visit_count, // 访问数
         last_reply_at: wx.moment(oItem.last_reply_at).fromNow(), // 最后一次回复时间
         title: oItem.title, // 标题
-        content: this.fnFmtTopicContentToSummary(oItem.content), // 内容
+        content: this.fnFmtTopicContentToSummary(oItem.content, this.data.nContentLen), // 内容
         avatar_url: oItem.author.avatar_url, // 作者头像
         loginname: oItem.author.loginname, // 作者名称
         create_at: wx.moment(oItem.create_at).format('YYYY-MM-DD HH:mm:ss') // 创建时间
