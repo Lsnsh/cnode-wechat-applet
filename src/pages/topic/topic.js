@@ -33,8 +33,11 @@ Page({
   },
   // 切换评论的点赞状态
   fnTapLikeCommentOrDislike(e) {
-    let oDataSet = e.currentTarget.dataset;
-    this.fnNetLikeCommentOrDislike(oDataSet.id, oDataSet.index);
+    // 先检查用户登录状态
+    if (fnCheckLogin()) {
+      let oDataSet = e.currentTarget.dataset;
+      this.fnNetLikeCommentOrDislike(oDataSet.id, oDataSet.index);
+    }
   },
   // 切换评论的点赞状态
   fnNetLikeCommentOrDislike(sCommentId, nCommentIndex) {
