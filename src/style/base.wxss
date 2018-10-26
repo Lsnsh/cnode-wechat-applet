@@ -71,11 +71,11 @@
 .color-white {
   color: #ffffff;
 }
-.color-green {
-  color: #80bd01;
-}
 .color-grey {
   color: #7c7c7c;
+}
+.color-green {
+  color: #80bd01;
 }
 /* 谈入谈出 */
 .fadein-init {

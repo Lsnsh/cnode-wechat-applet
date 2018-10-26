@@ -18,7 +18,11 @@
           <text>{{oTopicDetail.visit_count}}次浏览</text>
         </view>
       </view>
-      <button class="v" size="mini" style="right: 10rpx;" bindtap="fnTapSwitchTopicCollectStatus">{{oTopicDetail.is_collect ? '已收藏' : '收藏'}}</button>
+      <i 
+        class="v icon icon-collect {{oTopicDetail.is_collect ? 'color-green' : 'color-grey'}}"
+        style="right: 10rpx;font-size: 50rpx;"
+        bindtap="fnTapSwitchTopicCollectStatus">
+      </i>
     </view>
     <!-- 内容 -->
     <view class="topic-content">
