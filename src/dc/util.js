@@ -1,11 +1,11 @@
 import pathToRegexp from 'path-to-regexp';
 import request from '../utils/request';
-import CONFIG from '../config/index';
+import config from '../config/index';
 
 const METHOD_EMUN = ['OPTIONS', 'GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'TRACE', 'CONNECT'];
 
 export default (oOption = {}, fnDataModel) => {
-  oOption.url = CONFIG.api.url + oOption.url;
+  oOption.url = config.api.url + oOption.url;
   if (oOption.urlData) {
     oOption.url = fnCompileDynamicUrl(oOption.url, oOption.urlData);
   }

@@ -1,11 +1,11 @@
-import { version } from '../../utils/config';
+import config from '../../config/index';
 
 Page({
   data: {
     aContentList: [
       {
         header: '当前版本',
-        content: `v${version}`
+        content: `v${config.version}`
       },
       {
         header: '项目开源主页',
