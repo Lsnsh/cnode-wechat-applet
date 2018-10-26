@@ -10,13 +10,14 @@ Page({
       avatar_url: '/images/tabbar/icon_mine.png'
     }, // 用户信息
     aMenuList: [
-      {
-        url: '/pages/message/message',
-        open_type: 'navigate',
-        icon_class: 'icon-message',
-        text: '消息',
-        need_login: true
-      },
+      // TODO: 消息通知功能
+      // {
+      //   url: '/pages/message/message',
+      //   open_type: 'navigate',
+      //   icon_class: 'icon-message',
+      //   text: '消息',
+      //   need_login: true
+      // },
       {
         url: '/pages/about/about',
         open_type: 'navigate',
@@ -47,6 +48,8 @@ Page({
               avatar_url: '/images/tabbar/icon_mine.png'
             }
           });
+          // 更新全局的登录状态
+          app.globalData.bIsLogin = false;
           // 移除Storage中用户相关的数据
           wx.removeStorageSync('sAccessToken');
           wx.removeStorageSync('oUserInfo');

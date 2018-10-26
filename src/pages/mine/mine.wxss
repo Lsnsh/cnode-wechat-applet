@@ -15,7 +15,7 @@
   height: 100%;
 }
 .menu-list {
-  padding: 30rpx;
+  padding: 20rpx;
   font-size: 32rpx;
 }
 .menu-list .menu-item {

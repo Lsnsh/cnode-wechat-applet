@@ -10,6 +10,7 @@
 }
 .about-content-list {
   font-size: 28rpx;
+  padding: 20rpx;
 }
 .about-content-list .content-item{
   padding: 30rpx 30rpx;
