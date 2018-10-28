@@ -27,3 +27,7 @@
 .topic-list-wrap {
   padding: 20rpx
 }
+.topic-list-no-data {
+  height: calc(100vh - 150rpx);
+  font-size: 28rpx;
+}

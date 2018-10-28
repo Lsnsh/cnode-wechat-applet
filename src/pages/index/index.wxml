@@ -12,7 +12,14 @@
       <text>{{item.text}}</text>
     </view>
   </view>
-  <view class="topic-list-wrap">
-    <topic-list data="{{aTopicList}}"></topic-list>
+  <view  class="topic-list-wrap">
+    <block wx:if="{{aTopicList.length}}">
+      <topic-list data="{{aTopicList}}"></topic-list>
+    </block>
+    <block wx:else>
+      <view class="topic-list-no-data vh-parent color-grey">
+        <text class="vh">暂无数据～</text>
+      </view>
+    </block>
   </view>
 </view>
