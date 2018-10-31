@@ -6,10 +6,8 @@ CNode 社区第三方微信小程序版本
 
 ## 预览
 
-<img src="./preview/page_index.jpg" width="250" title="首页"/>
-<img src="./preview/page_mine.jpg" width="250" title="我的"/>
-<img src="./preview/page_topic.jpg" width="250" title="详情"/>
-<img src="./preview/page_about.jpg" width="250" title="关于"/>
+<img src="./preview/page_index.jpg" width="350" title="首页"/><img src="./preview/page_mine.jpg" width="350" title="我的"/>
+<img src="./preview/page_topic.jpg" width="350" title="详情"/><img src="./preview/page_about.jpg" width="350" title="关于"/>
 
 ## 命名规范
 
