@@ -1,6 +1,7 @@
 Page({
   data: {
     bIsReady: false, // 页面是否准备就绪
+    bIsFetchingTopicList: false, // 是否正在获取专题列表数据
     nActiveTabIndex: 0, // 当前处于活动状态的tab
     nContentLen: 60, // 主题卡片显示正文的长度
     aTabBarList: [
@@ -90,6 +91,9 @@ Page({
    * 0 => 正常获取 1 => 页面触底后获取 2 => 切换tab后获取
    */
   fnNetRTopicList(nFetchScene = 0) {
+    this.setData({
+      bIsFetchingTopicList: true
+    });
     // 显示标题栏加载效果
     wx.showNavigationBarLoading();
     wx.dc.topic
@@ -114,7 +118,8 @@ Page({
         wx.stopPullDownRefresh();
         wx.hideNavigationBarLoading();
         this.setData({
-          bIsReady: true
+          bIsReady: true,
+          bIsFetchingTopicList: false
         });
       })
       .catch(() => {
@@ -122,7 +127,8 @@ Page({
         wx.stopPullDownRefresh();
         wx.hideNavigationBarLoading();
         this.setData({
-          bIsReady: true
+          bIsReady: true,
+          bIsFetchingTopicList: false
         });
       });
   },

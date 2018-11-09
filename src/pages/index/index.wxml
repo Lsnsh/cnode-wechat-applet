@@ -15,6 +15,7 @@
   <view  class="topic-list-wrap">
     <block wx:if="{{aTopicList.length}}">
       <topic-list data="{{aTopicList}}"></topic-list>
+      <view class="topic-list-loading ta-c color-grey">加载中...</view>
     </block>
     <block wx:else>
       <view class="topic-list-no-data vh-parent color-grey">
