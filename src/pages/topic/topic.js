@@ -24,6 +24,12 @@ Page({
     this.fnFetchTopicDetail(this.data.sTopicId);
   },
   onReachBottom() {},
+  onShareAppMessage() {
+    return {
+      title: this.data.oTopicDetail.title,
+      path: `/pages/topic/topic?id=${this.data.sTopicId}`
+    };
+  },
   // 切换主题收藏状态
   fnTapSwitchTopicCollectStatus() {
     // 先检查用户登录状态

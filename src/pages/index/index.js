@@ -55,6 +55,12 @@ Page({
     // 追加主题列表数据
     this.fnNetRTopicList(1);
   },
+  onShareAppMessage() {
+    return {
+      title: 'CNode 社区第三方版',
+      path: '/pages/index/index'
+    };
+  },
   // 切换tab选项卡
   fnTapSwitchTab(e) {
     let oDataSet = e.currentTarget.dataset;
