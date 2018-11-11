@@ -31,6 +31,13 @@ export default (oOption = {}, fnDataModel) => {
             resolve(res.data);
           }
         } else {
+          // 显示错误信息
+          if (res.error_msg) {
+            wx.showToast({
+              title: res.error_msg,
+              icon: 'none'
+            });
+          }
           reject(res);
         }
       })
