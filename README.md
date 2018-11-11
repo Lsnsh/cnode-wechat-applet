@@ -107,7 +107,7 @@ CNode 社区第三方微信小程序版本
 
 12. 大功告成，nice! 但也别忘了回过头来，总结一下导致这几个问题的原因：
     1. `构建npm`会将npm包的入口文件（eg: moment.js），打包后更名为`index.js`
-    2. `构建npm`仅将npm包的入口js文件及其依赖的模块进行打包处理，并不会将该npm包下一些可选的文件（eg: moment的语言环境包）拷贝到`miniprogram_npm`目录下
+    2. `构建npm`仅将npm包的入口js文件及其依赖的模块进行打包处理，除此之外的文件（eg: moment的语言环境包）并不会做打包处理
 
 > `miniprogram_npm` 、`构建npm`及更多npm支持相关信息，请翻阅[小程序文档-npm支持][1]
 
