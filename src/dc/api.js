@@ -198,3 +198,82 @@ export class User extends Base {
     );
   }
 }
+
+export class Message extends Base {
+  constructor() {
+    super();
+    this.sListUrl = '/messages';
+    this.sCountUrl = '/message/count';
+    this.sMarkUrl = '/message/mark_one/:msg_id';
+    this.sMarkAllUrl = '/message/mark_all';
+  }
+  /**
+   * 获取全部消息（划分已读和未读消息）
+   * 接收 get 参数
+   * accesstoken String
+   * mdrender String 当为 false 时，不渲染。默认为 true，渲染出现的所有 markdown 格式文本。
+   * @param {Object} oOption
+   * @param {Function} fnDataModel
+   */
+  list(oOption = {}, fnDataModel) {
+    return fnDataProcess(
+      {
+        url: this.sListUrl,
+        method: 'get',
+        ...oOption
+      },
+      fnDataModel
+    );
+  }
+  /**
+   * 获取未读消息数
+   * 接收 get 参数
+   * accesstoken String
+   * @param {Object} oOption
+   * @param {Function} fnDataModel
+   */
+  count(oOption = {}, fnDataModel) {
+    return fnDataProcess(
+      {
+        url: this.sCountUrl,
+        method: 'get',
+        ...oOption
+      },
+      fnDataModel
+    );
+  }
+  /**
+   * 标记单个消息为已读
+   * 接收 post 参数
+   * accesstoken String
+   * @param {Object} oOption
+   * @param {Function} fnDataModel
+   */
+  mark(oOption = {}, fnDataModel) {
+    return fnDataProcess(
+      {
+        url: this.sMarkUrl,
+        method: 'post',
+        ...oOption
+      },
+      fnDataModel
+    );
+  }
+  /**
+   * 标记全部消息为已读
+   * 接收 post 参数
+   * accesstoken String
+   * @param {Object} oOption
+   * @param {Function} fnDataModel
+   */
+  markAll(oOption = {}, fnDataModel) {
+    return fnDataProcess(
+      {
+        url: this.sMarkAllUrl,
+        method: 'post',
+        ...oOption
+      },
+      fnDataModel
+    );
+  }
+}
