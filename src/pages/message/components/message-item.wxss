@@ -1,0 +1,21 @@
+@import '/style/base.wxss';
+
+.message-item {
+  padding: 20rpx;
+  font-size: 28rpx;
+  background-color: #ffffff;
+  border-top: 2rpx solid #DCDDDC;
+}
+.message-header {
+  font-size: 28rpx;
+}
+.message-header-avatar {
+  width: 100rpx;
+  height: 100rpx;
+}
+.message-related-topic {
+  padding: 20rpx;
+  color: #666666;
+  background-color: #EDEEED;
+  border-radius: 8rpx;
+}

@@ -1,0 +1,29 @@
+<view class="message-item">
+  <!-- 消息头部 -->
+  <view class="message-header vh-parent clf ">
+    <view class="message-header-avatar fl-left">
+      <image class="w-p100 h-p100 rounded-p50" src="{{data.author.avatar_url}}" />
+    </view>
+    <navigator 
+      class="v w-p100"
+      open-type="navigate"
+      url="/pages/topic/topic?id={{data.topic.id}}"
+      hover-class="none"
+      style="margin-left: 120rpx;"
+    >
+      <view>{{data.author.loginname}}</view>
+      <view class="color-grey">在回复消息中@你</view>
+    </navigator>
+    <view class="v color-grey" style="right: 10rpx;">{{data.create_at}}</view>
+  </view>
+  <!-- 消息正文 -->
+  <view>
+    <wemark type="wemark" md="{{data.reply.content}}" highlight link></wemark>
+  </view>
+  <!-- 消息相关话题 -->
+  <navigator
+    class="message-related-topic"
+    open-type="navigate" 
+    url="/pages/topic/topic?id={{data.topic.id}}"
+  >话题：{{data.topic.title}}</navigator>
+</view>

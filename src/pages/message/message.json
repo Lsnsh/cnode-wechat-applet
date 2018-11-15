@@ -1,1 +1,7 @@
-{}
+{
+  "usingComponents": {
+    "message-item": "./components/message-item"
+  },
+  "navigationBarTitleText": "消息",
+  "enablePullDownRefresh": true
+}

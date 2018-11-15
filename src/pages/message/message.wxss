@@ -1,0 +1,14 @@
+.message-list-container {
+  padding: 20rpx;
+}
+.message-list {
+  border-radius: 8rpx;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+}
+.message-list .message-list-title {
+  padding: 20rpx;
+  font-size: 32rpx;
+}
+.has-not-red-message-list {
+  margin-bottom: 20rpx;
+}

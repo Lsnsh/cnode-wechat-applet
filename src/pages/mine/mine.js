@@ -10,14 +10,12 @@ Page({
       avatar_url: '/images/tabbar/icon_mine.png'
     }, // 用户信息
     aMenuList: [
-      // TODO: 消息通知功能
-      // {
-      //   url: '/pages/message/message',
-      //   open_type: 'navigate',
-      //   icon_class: 'icon-message',
-      //   text: '消息',
-      //   need_login: true
-      // },
+      {
+        url: '/pages/message/message',
+        open_type: 'navigate',
+        icon_class: 'icon-message',
+        text: '消息'
+      },
       {
         url: '/pages/about/about',
         open_type: 'navigate',
