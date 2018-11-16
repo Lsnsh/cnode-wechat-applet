@@ -36,13 +36,13 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": 0,
-					"name": "\b主题详情",
+					"name": "主题详情",
 					"pathName": "pages/topic/topic",
-					"query": "id=5b9b5d2ba5ed9d2159fa312e"
+					"query": "id=5bd4772a14e994202cd5bdb7"
 				},
 				{
 					"id": 1,
@@ -54,6 +54,12 @@
 					"id": -1,
 					"name": "我的",
 					"pathName": "pages/mine/mine",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "消息",
+					"pathName": "pages/message/message",
 					"query": ""
 				}
 			]

@@ -7,8 +7,9 @@
 }
 .message-list .message-list-title {
   padding: 20rpx;
-  font-size: 32rpx;
+  font-size: 34rpx;
+  font-weight: 500;
 }
-.has-not-red-message-list {
-  margin-bottom: 20rpx;
+.has-not-read-message-list {
+  margin-bottom: 40rpx;
 }

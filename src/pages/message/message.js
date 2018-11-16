@@ -7,6 +7,14 @@ Page({
   onLoad() {
     this.fnNetRAllMessage();
   },
+  // 点击已读消息
+  fnTapHasNotReadMessageItem(e) {
+    let oDataSet = e.currentTarget.dataset;
+    // 将该消息标记为已读
+    this.fnNetMarkOneMessage(oDataSet.msgId);
+  },
+  // 标记单个消息为已读
+  fnNetMarkOneMessage(sMessageId) {},
   // 获取所有消息（包含已读和未读消息）
   fnNetRAllMessage() {
     // 显示标题栏加载效果
