@@ -3,14 +3,17 @@
   <view class="message-list has-not-read-message-list">
     <!-- 新消息 -->
     <view class="message-list-title">
-      <text>新消息 </text>
-      <text wx:if="aHasReadMessageList.length">({{aHasReadMessageList.length}})</text>
+      <text>新消息</text>
+      <text wx:if="aHasNotReadMessageList.length">({{aHasNotReadMessageList.length}})</text>
     </view>
-    <message-item wx:for="{{aHasReadMessageList}}" wx:key="{{item.id}}" data="{{item}}" data-msg-id="{{item.id}}" bindtap="fnTapHasNotReadMessageItem"></message-item>
+    <message-item wx:for="{{aHasNotReadMessageList}}" wx:key="{{item.id}}" data="{{item}}" bindread="fnHandleHasReadMessageEvent"></message-item>
   </view>
   <!-- 已读消息列表 -->
   <view class="message-list">
-    <view class="message-list-title">已读消息</view>
-    <message-item wx:for="{{aHasReadMessageList}}" wx:key="{{item.id}}" data="{{item}}"></message-item>
+    <view class="message-list-title">
+      <text>已读消息</text>
+      <text wx:if="aHasReadMessageList.length">({{aHasReadMessageList.length}})</text>
+    </view>
+    <message-item wx:for="{{aHasReadMessageList}}" wx:key="{{item.id}}" data="{{item}}" bindread="fnHandleHasReadMessageEvent"></message-item>
   </view>
 </view>

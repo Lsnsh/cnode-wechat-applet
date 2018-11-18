@@ -89,3 +89,7 @@
 .fadein {
   opacity: 1;
 }
+/* hover样式 */
+.navigator-hover {
+  opacity: 0.8;
+}
