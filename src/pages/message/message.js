@@ -18,6 +18,33 @@ Page({
       });
     }, 200);
   },
+  // 获取消息类型，获取对应的文本信息
+  fnGetMessageTypeText(sMessageType) {
+    /**
+     * type（消息类型）:
+     * reply: xx 回复了你的话题
+     * reply2: xx 在话题中回复了你
+     * at: xx ＠了你
+     * follow: xx 关注了你
+     */
+    switch (sMessageType) {
+      case 'reply': {
+        return '回复了你的话题';
+      }
+      case 'reply2': {
+        return '在话题中回复了你';
+      }
+      case 'at': {
+        return '@了你';
+      }
+      case 'follow': {
+        return '关注了你';
+      }
+      default: {
+        return '回复了你的话题';
+      }
+    }
+  },
   // 获取所有消息（包含已读和未读消息）
   fnNetRAllMessage() {
     // 显示标题栏加载效果
@@ -62,12 +89,14 @@ Page({
     oResult.aHasReadMessageList = oData.has_read_messages.map(oItem => {
       return {
         ...oItem,
+        type_text: this.fnGetMessageTypeText(oItem.type),
         create_at: wx.moment(oItem.create_at).fromNow()
       };
     });
     oResult.aHasNotReadMessageList = oData.hasnot_read_messages.map(oItem => {
       return {
         ...oItem,
+        type_text: this.fnGetMessageTypeText(oItem.type),
         create_at: wx.moment(oItem.create_at).fromNow()
       };
     });

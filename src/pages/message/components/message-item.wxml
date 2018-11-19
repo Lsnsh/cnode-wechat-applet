@@ -11,9 +11,12 @@
       bindtap="fnTapMessageItem"
     >
       <view>{{data.author.loginname}}</view>
-      <view class="color-grey">在回复消息中@你</view>
+      <view class="color-grey">{{data.type_text}}</view>
     </view>
-    <view class="v color-grey" style="right: 10rpx;">{{data.create_at}}</view>
+    <view class="v message-header-right">
+      <view class="{{data.has_read ? 'color-grey' : 'color-green'}}">{{data.create_at}}</view>
+      <view class="message-item-red-point" wx:if="{{!data.has_read}}"></view>
+    </view>
   </view>
   <!-- 消息正文 -->
   <view>

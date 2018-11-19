@@ -1,7 +1,7 @@
 @import '/style/base.wxss';
 
 .message-item {
-  padding: 20rpx;
+  padding: 20rpx 30rpx;
   font-size: 28rpx;
   background-color: #ffffff;
   border-top: 2rpx solid #DCDDDC;
@@ -12,6 +12,18 @@
 .message-header-avatar {
   width: 100rpx;
   height: 100rpx;
+}
+.message-header-right {
+  right: 0;
+}
+.message-item-red-point {
+  width: 20rpx;
+  height: 20rpx;
+  margin-top: 10rpx;
+  margin-left: auto;
+  margin-right: 6rpx;
+  border-radius: 50%;
+  background-color: red;
 }
 .message-related-topic {
   padding: 20rpx;
