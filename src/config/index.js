@@ -3,6 +3,8 @@ const API = {
   PATH: '/api/v1'
 };
 
+export const METHOD_ENUM = ['OPTIONS', 'GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'TRACE', 'CONNECT'];
+
 export default {
   // 项目api配置
   api: {
