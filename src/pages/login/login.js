@@ -58,6 +58,7 @@ Page({
         }
       })
       .then(res => {
+        // TODO: 用户登录成功后，调接口获取未读消息数量
         if (res) {
           app.globalData.bIsLogin = true;
           wx.setStorageSync('sAccessToken', sAccessToken);

@@ -10,6 +10,7 @@ Page({
       avatar_url: '/images/tabbar/icon_mine.png'
     }, // 用户信息
     aMenuList: [
+      // TODO: 需要用户登录后才能访问
       {
         url: '/pages/message/message',
         open_type: 'navigate',
