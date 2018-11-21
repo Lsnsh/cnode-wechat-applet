@@ -5,9 +5,8 @@
       <image class="w-p100 h-p100 rounded-p50" src="{{data.author.avatar_url}}" />
     </view>
     <view 
-      class="v w-p100"
-      hover-class="navigator-hover"
-      style="margin-left: 120rpx;"
+      class="message-header-content v w-p100"
+      hover-class="message-header-content-hover"
       bindtap="fnTapMessageItem"
     >
       <view>{{data.author.loginname}}</view>

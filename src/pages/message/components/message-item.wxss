@@ -13,6 +13,14 @@
   width: 100rpx;
   height: 100rpx;
 }
+.message-header-content {
+  margin-left: 120rpx;
+  z-index: 2;
+}
+.message-header-content-hover {
+  color: #7c7c7c;
+  opacity: 0.8;
+}
 .message-header-right {
   right: 0;
 }

@@ -24,6 +24,12 @@
         "text": "主页"
       },
       {
+        "pagePath": "pages/message/message",
+        "iconPath": "images/tabbar/icon_message.png",
+        "selectedIconPath": "images/tabbar/icon_message_active.png",
+        "text": "消息"
+      },
+      {
         "pagePath": "pages/mine/mine",
         "iconPath": "images/tabbar/icon_mine.png",
         "selectedIconPath": "images/tabbar/icon_mine_active.png",

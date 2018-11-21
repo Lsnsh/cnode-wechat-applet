@@ -92,4 +92,5 @@
 /* hover样式 */
 .navigator-hover {
   opacity: 0.8;
+  background: #eaeaea;
 }
