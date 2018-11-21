@@ -15,7 +15,7 @@
   padding: 60rpx 40rpx 40rpx 40rpx;
   border-radius: 8rpx;
   background: #fff;
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   font-size: 28rpx;
 }
 .login-main .login-input {
@@ -30,7 +30,7 @@
   background: #80bd01;
   text-align: center;
   border-radius: 8rpx;
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,.2);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
 }
 .login-main .login-third {

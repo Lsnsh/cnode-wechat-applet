@@ -10,7 +10,7 @@
   line-height: 90rpx;
   background: #fff;
   overflow-x: auto;
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   z-index: 2;
 }
 .topic-tabbar .topic-tabbar-item {
@@ -25,7 +25,7 @@
   font-weight: 500;
 }
 .topic-list-wrap {
-  padding: 20rpx
+  padding: 20rpx;
 }
 .topic-list-loading {
   padding: 10rpx;

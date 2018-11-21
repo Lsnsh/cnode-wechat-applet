@@ -3,7 +3,7 @@
 }
 .message-list {
   border-radius: 8rpx;
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 }
 .message-list .message-list-title {
   padding: 20rpx;

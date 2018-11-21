@@ -1,7 +1,6 @@
 .about-header {
   height: 300rpx;
   padding: 50rpx;
-  /* background: #333; */
   text-align: center;
 }
 .about-header .logo {
@@ -12,10 +11,10 @@
   font-size: 28rpx;
   padding: 20rpx;
 }
-.about-content-list .content-item{
+.about-content-list .content-item {
   padding: 30rpx 30rpx;
   margin-bottom: 20rpx;
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 }
 .content-item .item-header {
   font-size: 32rpx;

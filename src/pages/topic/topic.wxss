@@ -4,18 +4,20 @@
 .topic-main {
   padding: 30rpx;
   margin-bottom: 20rpx;
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   border-radius: 8rpx;
 }
 .topic-info {
   padding-top: 20rpx;
   padding-bottom: 20rpx;
 }
-.topic-info-left, .topic-comment-left{
+.topic-info-left,
+.topic-comment-left {
   width: 100rpx;
   height: 100rpx;
 }
-.topic-info-center, .topic-comment-center {
+.topic-info-center,
+.topic-comment-center {
   margin-left: 130rpx;
 }
 .topic-content {
@@ -24,7 +26,7 @@
 .topic-comment-list {
   padding-top: 20rpx;
   padding-bottom: 20rpx;
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   border-radius: 8rpx;
 }
 .topic-comment-list-header {
@@ -32,7 +34,7 @@
 }
 .topic-comment-item {
   padding: 30rpx 20rpx 0 20rpx;
-  border-top: 1rpx solid #F1F1F1;
+  border-top: 1rpx solid #f1f1f1;
 }
 .topic-comment-content {
   font-size: 28rpx;
