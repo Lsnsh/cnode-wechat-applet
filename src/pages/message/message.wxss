@@ -13,3 +13,7 @@
 .has-not-read-message-list {
   margin-bottom: 40rpx;
 }
+.message-list-no-data {
+  height: calc(100vh - 150rpx);
+  font-size: 28rpx;
+}
