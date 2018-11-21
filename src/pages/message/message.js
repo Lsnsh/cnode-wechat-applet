@@ -1,3 +1,6 @@
+import { fnCheckLogin } from '../../utils/util';
+const app = getApp();
+
 Page({
   data: {
     bIsReady: false, // 页面是否准备就绪
@@ -5,11 +8,29 @@ Page({
     aHasNotReadMessageList: [] // 未读消息列表
   },
   onLoad() {
-    this.fnNetRAllMessage();
+    // 页面加载时，如果是未登录状态，直接初始化页面
+    if (!app.globalData.bIsLogin) {
+      this.setData({
+        bIsReady: true
+      });
+    }
+  },
+  onShow() {
+    // 页面活动时，检测登录状态
+    if (fnCheckLogin()) {
+      // 登录状态下，获取消息列表数据
+      this.fnNetRAllMessage();
+    } else {
+      // 否则重置消息列表数据
+      this.setData({
+        aHasReadMessageList: [],
+        aHasNotReadMessageList: []
+      });
+    }
   },
   // 处理已读消息事件
   fnHandleHasReadMessageEvent(e) {
-    // 根据子组件传递的msg_id，将未读消息列表中，将该消息移至已读消息列表中
+    // 根据子组件传递的msg_id，从未读消息列表中，将该消息移至已读消息列表中
     this.data.aHasReadMessageList.unshift(...this.data.aHasNotReadMessageList.filter(oItem => oItem.id === e.detail.msg_id));
     setTimeout(() => {
       this.setData({
@@ -59,6 +80,13 @@ Page({
         this.fnAllMessageDataModel
       )
       .then(res => {
+        if (res.nHasNotReadMessageCount) {
+          // 更新tabBar上的新消息数量
+          wx.setTabBarBadge({
+            index: 1,
+            text: `${res.nHasNotReadMessageCount}`
+          });
+        }
         this.setData({
           bIsReady: true,
           aHasReadMessageList: res.aHasReadMessageList,
@@ -100,6 +128,7 @@ Page({
         create_at: wx.moment(oItem.create_at).fromNow()
       };
     });
+    oResult.nHasNotReadMessageCount = oData.hasnot_read_messages.length;
     return oResult;
   }
 });
