@@ -1,6 +1,6 @@
 {
   "name": "cnode-wechat-applet",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "cnode社区-微信小程序",
   "main": "app.js",
   "scripts": {
