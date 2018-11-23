@@ -5,7 +5,8 @@
     "pages/mine/mine",
     "pages/login/login",
     "pages/message/message",
-    "pages/about/about"
+    "pages/about/about",
+    "pages/user/user"
   ],
   "window": {
     "backgroundTextStyle": "light",
