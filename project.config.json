@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": 0,
@@ -61,6 +61,12 @@
 					"name": "消息",
 					"pathName": "pages/message/message",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "用户",
+					"pathName": "pages/user/user",
+					"query": "name=alsotang"
 				}
 			]
 		}
