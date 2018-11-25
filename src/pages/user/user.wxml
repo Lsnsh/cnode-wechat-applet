@@ -1,2 +1,22 @@
-<!-- TODO: 完善页面结构与样式 -->
-<view class="ta-c">敬请期待</view>
+<view class="fadein-init {{bIsReady ? 'fadein' : ''}}">
+  <!-- 用户资料 -->
+  <view class="user-profile-wrap ta-c">
+    <image class="user-avatrl mlr-auto rounded-p50" src="{{oUserProfile.avatar_url}}"></image>
+    <view class="user-name color-white">{{oUserProfile.loginname}}</view>
+    <view class="user-github-link">{{oUserProfile.githubUsername}}@github.com</view>
+    <view class="clf" style="font-size: 24rpx;">
+      <view class="fl-left color-white">注册时间：{{oUserProfile.create_at}}</view>
+      <view class="fl-right color-green">积分：{{oUserProfile.score}}</view>
+    </view>
+  </view>
+  <!-- 用户动态 -->
+  <view class="user-activity-wrap">
+    <!-- tabbar -->
+    <view class="tabbar-wrap ta-c">
+      <view class="tab {{item.active ? 'tab-active color-white' : 'color-grey'}}" wx:for="{{aTabBar}}" wx:key="{{index}}">
+        <view>{{item.text}}</view>
+      </view>
+    </view>
+    <!-- TODO: tab对应的列表 -->
+  </view>
+</view>

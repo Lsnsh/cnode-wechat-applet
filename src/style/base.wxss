@@ -80,10 +80,6 @@
 /* 谈入谈出 */
 .fadein-init {
   opacity: 0;
-  -webkit-transition: opacity 0.2s ease-in;
-  -moz-transition: opacity 0.2s ease-in;
-  -ms-transition: opacity 0.2s ease-in;
-  -o-transition: opacity 0.2s ease-in;
   transition: opacity 0.2s ease-in;
 }
 .fadein {

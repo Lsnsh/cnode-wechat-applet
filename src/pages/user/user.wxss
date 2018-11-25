@@ -1,0 +1,34 @@
+.user-profile-wrap {
+  padding: 40rpx 30rpx 20rpx 30rpx;
+  background: #333;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+.user-avatrl {
+  display: block;
+  width: 200rpx;
+  height: 200rpx;
+}
+.user-name {
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+.user-github-link {
+  margin-bottom: 60rpx;
+  font-size: 28rpx;
+  color: #A2A099;
+  text-decoration: underline;
+}
+/* 用户动态 */
+.tabbar-wrap {
+  display: flex;
+  background: #2e3331;
+}
+.tabbar-wrap .tab {
+  flex: 1;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+}
+.tabbar-wrap .tab.tab-active {
+  border-bottom: 6rpx solid #80bd01;
+}

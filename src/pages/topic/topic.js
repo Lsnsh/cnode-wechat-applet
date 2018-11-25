@@ -127,6 +127,7 @@ Page({
         if (res) {
           // 页面onShow时，更新主题部分信息
           if (bIsOnShow) {
+            // TODO: 增量更新评论列表数据
             this.setData({
               'oTopicDetail.tab': res.top ? 'top' : res.good ? 'good' : res.tab,
               'oTopicDetail.visit_count': res.visit_count,
