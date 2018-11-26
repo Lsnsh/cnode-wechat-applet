@@ -28,7 +28,43 @@
   height: 100rpx;
   line-height: 100rpx;
   font-size: 28rpx;
+  border-bottom: 6rpx solid #2e3331;
+  box-sizing: border-box;
 }
 .tabbar-wrap .tab.tab-active {
-  border-bottom: 6rpx solid #80bd01;
+  border-color: #80bd01;
+}
+/* 最近回复列表 */
+.recent-reply-list {
+  padding: 30rpx 20rpx;
+}
+.reply-item {
+  padding: 30rpx;
+  margin-bottom: 10rpx;
+  /* border-bottom: 0.01rem solid #7c7c7c; */
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8rpx;
+}
+.reply-left {
+  width: 100rpx;
+  height: 100rpx;
+}
+.reply-right {
+  width: 520rpx;
+  margin-left: 30rpx;
+  font-size: 28rpx;
+}
+.reply-topic-title {
+  margin-bottom: 20rpx;
+  font-size: 32rpx;
+}
+/* 最近话题列表 */
+.recent-topic-list {
+  padding: 30rpx 20rpx;
+  font-size: 28rpx;
+}
+/* 话题收藏列表 */
+.topic-collection-list  {
+  padding: 30rpx 20rpx;
+  font-size: 28rpx;
 }

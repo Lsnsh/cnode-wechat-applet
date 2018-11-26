@@ -77,6 +77,12 @@
 .color-green {
   color: #80bd01;
 }
+/* 文本溢出隐藏 */
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 /* 谈入谈出 */
 .fadein-init {
   opacity: 0;

@@ -1,6 +1,7 @@
 Page({
   data: {
     bIsReady: false, // 页面是否准备就绪
+    nActiveTabIndex: 0,
     aTabBar: [
       {
         active: true,
@@ -19,6 +20,13 @@ Page({
     if (options.name) {
       this.fnGetUserProfile(options.name);
     }
+  },
+  // 点击切换tab
+  fnClickSwitchTab(e) {
+    let oDataSet = e.currentTarget.dataset;
+    this.setData({
+      nActiveTabIndex: oDataSet.index
+    });
   },
   // 获取用户资料
   fnGetUserProfile(sUserName) {
