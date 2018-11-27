@@ -1,0 +1,21 @@
+@import '/style/base.wxss';
+
+.topic-item {
+  padding: 30rpx;
+  margin-bottom: 10rpx;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8rpx;
+}
+.topic-left {
+  width: 100rpx;
+  height: 100rpx;
+}
+.topic-right {
+  width: 520rpx;
+  margin-left: 30rpx;
+  font-size: 28rpx;
+}
+.topic-title {
+  margin-bottom: 20rpx;
+  font-size: 32rpx;
+}

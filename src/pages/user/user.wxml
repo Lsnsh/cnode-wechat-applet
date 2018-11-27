@@ -23,33 +23,21 @@
         <view>{{item.text}}</view>
       </view>
     </view>
-    <!-- 最近回复列表 -->
-    <block wx:if="{{nActiveTabIndex === 0}}">
-      <view class="recent-reply-list" >
-        <!-- TODO: 点击头像跳转用户资料页，点击文字跳转话题详情 -->
-        <view class="reply-item" wx:for="{{oUserProfile.recent_replies}}" wx:key="{{index}}">
-          <image class="reply-left inbl vtal-top rounded-p50" src="{{item.author.avatar_url}}"/>
-          <view class="reply-right inbl vtal-top">
-            <view class="reply-topic-title text-ellipsis">{{item.title}}</view>
-            <view class="clf color-grey">
-              <view class="fl-left">{{item.author.loginname}}</view>
-              <view class="fl-right">{{item.last_reply_at}}</view>
-            </view>
-          </view>
+    <view class="topic-list-wrap">
+      <!-- 最近回复列表 -->
+      <block wx:if="{{nActiveTabIndex === 0}}">
+        <topic-list list="{{oUserProfile.recent_replies}}"></topic-list>
+      </block>
+      <!-- 最新发布话题列表 -->
+      <block wx:elif="{{nActiveTabIndex === 1}}">
+        <topic-list list="{{oUserProfile.recent_topics}}"></topic-list>
+      </block>
+      <!-- TODO: 话题收藏列表 -->
+      <block wx:elif="{{nActiveTabIndex === 2}}">
+        <view class="topic-collection-list ta-c">
+          <view>敬请期待</view>
         </view>
-      </view>
-    </block>
-    <!-- TODO: 最新发布列表 -->
-    <block wx:elif="{{nActiveTabIndex === 1}}">
-      <view class="recent-topic-list ta-c">
-        <view>敬请期待</view>
-      </view>
-    </block>
-    <!-- TODO: 话题收藏列表 -->
-    <block wx:elif="{{nActiveTabIndex === 2}}">
-      <view class="topic-collection-list ta-c">
-        <view>敬请期待</view>
-      </view>
-    </block>
+      </block>
+    </view>
   </view>
 </view>

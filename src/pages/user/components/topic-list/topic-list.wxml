@@ -1,0 +1,19 @@
+<view class="topic-list">
+  <navigator 
+    class="topic-item"
+    wx:for="{{list}}"
+    wx:key="{{index}}"
+    url="/pages/topic/topic?id={{item.id}}"
+  >
+    <navigator class="topic-left inbl vtal-top rounded-p50" url="/pages/user/user?name={{item.author.loginname}}" hover-stop-propagation="{{true}}">
+      <image class="w-p100 h-p100 rounded-p50" src="{{item.author.avatar_url}}"/>
+    </navigator>
+    <view class="topic-right inbl vtal-top">
+      <view class="topic-title text-ellipsis">{{item.title}}</view>
+      <view class="clf color-grey">
+        <view class="fl-left">{{item.author.loginname}}</view>
+        <view class="fl-right">{{item.last_reply_at}}</view>
+      </view>
+    </view>
+  </navigator>
+</view>

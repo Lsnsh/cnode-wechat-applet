@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents": {
+    "topic-list": "./components/topic-list/topic-list"
+  }
+}
