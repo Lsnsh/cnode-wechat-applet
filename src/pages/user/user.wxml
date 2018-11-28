@@ -32,10 +32,11 @@
       <block wx:elif="{{nActiveTabIndex === 1}}">
         <topic-list list="{{oUserProfile.recent_topics}}"></topic-list>
       </block>
-      <!-- TODO: 话题收藏列表 -->
+      <!-- 话题收藏列表 -->
       <block wx:elif="{{nActiveTabIndex === 2}}">
-        <view class="topic-collection-list ta-c">
-          <view>敬请期待</view>
+        <topic-list wx:if="{{!bIsFetchingUserCollectTopicList}}" list="{{aUserCollectTopicList}}"></topic-list>
+        <view wx:else class="topic-collection-list ta-c">
+          <view>正在加载...</view>
         </view>
       </block>
     </view>

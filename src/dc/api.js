@@ -65,7 +65,7 @@ export class TopicCollect extends Base {
     return fnDataProcess(
       {
         url: this.sListUrl,
-        method: 'post',
+        method: 'get',
         ...oOption
       },
       fnDataModel
