@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "topic-list": "./components/topic-list/topic-list"
-  }
+  },
+  "navigationBarTitleText": "个人主页"
 }

@@ -1,13 +1,21 @@
 <view class="topic-list">
-  <navigator 
+  <view 
     class="topic-item"
     wx:for="{{list}}"
     wx:key="{{index}}"
-    url="/pages/topic/topic?id={{item.id}}"
+    data-id="{{item.id}}"
+    hover-class="navigator-hover"
+    bindtap="fnTapTopicItem"
   >
-    <navigator class="topic-left inbl vtal-top rounded-p50" url="/pages/user/user?name={{item.author.loginname}}" hover-stop-propagation="{{true}}">
+    <view
+      class="topic-left inbl vtal-top rounded-p50" 
+      data-loginname="{{item.author.loginname}}"
+      hover-class="navigator-hover"
+      hover-stop-propagation="{{true}}"
+      catchtap="fnTapAuthorAvatar"
+    >
       <image class="w-p100 h-p100 rounded-p50" src="{{item.author.avatar_url}}"/>
-    </navigator>
+    </view>
     <view class="topic-right inbl vtal-top">
       <view class="topic-title text-ellipsis">{{item.title}}</view>
       <view class="clf color-grey">
@@ -15,5 +23,5 @@
         <view class="fl-right">{{item.last_reply_at}}</view>
       </view>
     </view>
-  </navigator>
+  </view>
 </view>
