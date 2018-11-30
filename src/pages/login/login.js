@@ -24,6 +24,7 @@ Page({
     wx.scanCode({
       success: res => {
         if (res.result) {
+          wx.vibrateShort();
           this.fnNetUserLogin(res.result);
         }
       },
@@ -63,8 +64,8 @@ Page({
           wx.setStorageSync('sAccessToken', sAccessToken);
           wx.setStorageSync('oUserInfo', res);
           wx.navigateBack();
-          wx.hideNavigationBarLoading();
         }
+        wx.hideNavigationBarLoading();
       })
       .catch(err => {
         wx.hideNavigationBarLoading();
