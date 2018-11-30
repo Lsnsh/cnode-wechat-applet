@@ -2,7 +2,9 @@ Page({
   data: {
     bIsReady: false, // 页面是否准备就绪
     bIsFetchingUserCollectTopicList: false, // 是否正在获取用户收藏话题列表
+    bAllowScrollY: false, // 是否允许scroll-view滚动
     nActiveTabIndex: 0,
+    nTabBarOffsetTop: 0, // tabBar距离顶部的距离
     aTabBar: [
       {
         active: true,
@@ -24,12 +26,44 @@ Page({
       this.fnGetUserCollectTopicList(options.name);
     }
   },
+  onReady() {
+    // 更新tabBar距离顶部的距离
+    this.fnUpdateTabBarOffsetTop();
+  },
+  // 监听页面滚动
+  onPageScroll(e) {
+    // 判断页面是否滚动带tabBar顶部
+    if (e.scrollTop >= this.data.nTabBarOffsetTop) {
+      // 将scroll-view设为可滚动（实现tabBar吸顶效果）
+      this.setData({
+        bAllowScrollY: true
+      });
+    } else {
+      // 否则scroll-view设为不可滚动（释放tabBar吸顶效果）
+      this.data.bAllowScrollY &&
+        this.setData({
+          bAllowScrollY: false
+        });
+    }
+  },
   // 点击切换tab
   fnClickSwitchTab(e) {
     let oDataSet = e.currentTarget.dataset;
     this.setData({
       nActiveTabIndex: oDataSet.index
     });
+  },
+  // 更新tabBar距离顶部的距离
+  fnUpdateTabBarOffsetTop() {
+    let oQuery = wx.createSelectorQuery();
+    oQuery
+      .select('.tabbar-wrap')
+      .boundingClientRect(res => {
+        this.setData({
+          nTabBarOffsetTop: res.top
+        });
+      })
+      .exec();
   },
   // 获取用户收藏话题
   fnGetUserCollectTopicList(sUserName) {
