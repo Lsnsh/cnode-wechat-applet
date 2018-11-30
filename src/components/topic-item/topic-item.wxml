@@ -1,29 +1,31 @@
-<navigator class="topic-container" url="/pages/topic/topic?id={{data.id}}">
-  <view class="topic-header">
-    <view style="margin-bottom: 20rpx;">
-      <!-- 主题标签 -->
-      <topic-tag type="{{ data.tab }}"></topic-tag>
-      <view class="topic-header-right">
-        <!-- 主题回复数 -->
-        <text style="color: #8EB63D;">{{ data.reply_count }}</text>
-        <text style="padding: 0 5rpx;">/</text>
-        <!-- 主题访问数 -->
-        <text>{{ data.visit_count }}</text>
-        <text style="padding: 0 5rpx;">·</text>
-        <!-- 主题最后一次回复的时间 -->
-        <text>{{ data.last_reply_at }}</text>
+<view class="topic-container">
+  <view class="topic-main" hover-class="navigator-hover" bindtap="fnTapJumpTopicDetail">
+    <view class="topic-header">
+      <view style="margin-bottom: 20rpx;">
+        <!-- 主题标签 -->
+        <topic-tag type="{{ data.tab }}"></topic-tag>
+        <view class="topic-header-right">
+          <!-- 主题回复数 -->
+          <text style="color: #8EB63D;">{{ data.reply_count }}</text>
+          <text style="padding: 0 5rpx;">/</text>
+          <!-- 主题访问数 -->
+          <text>{{ data.visit_count }}</text>
+          <text style="padding: 0 5rpx;">·</text>
+          <!-- 主题最后一次回复的时间 -->
+          <text>{{ data.last_reply_at }}</text>
+        </view>
       </view>
+      <!-- 主题标题 -->
+      <view class="topic-title">{{ data.title }}</view>
     </view>
-    <!-- 主题标题 -->
-    <view class="topic-title">{{ data.title }}</view>
+    <!-- 主题内容 -->
+    <view class="topic-content">{{ data.content }}</view>
   </view>
-  <!-- 主题内容 -->
-  <view class="topic-content">{{ data.content }}</view>
   <view class="topic-divide"></view>
-  <view class="topic-footer clear-float">
+  <view class="topic-footer clear-float" hover-class="navigator-hover" bindtap="fnTapJumpUserProfile">
     <view class="topic-footer-left clear-float">
       <!-- 主题作者头像 -->
-      <image class="topic-author-avatar" wx:if="{{ data.avatar_url }}" src="{{ data.avatar_url }}" />
+      <image class="topic-author-avatar rounded-p50" wx:if="{{ data.avatar_url }}" src="{{ data.avatar_url }}" />
       <!-- 主题作者名称 -->
       <text class="topic-author-name" wx:if="{{ data.loginname }}">{{ data.loginname }}</text>
     </view>
@@ -33,4 +35,4 @@
       <text>{{ data.create_at }}</text>
     </view>
   </view>
-</navigator>
+</view>

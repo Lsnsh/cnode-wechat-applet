@@ -24,6 +24,18 @@ Page({
   onShow() {
     this.fnInitPageData();
   },
+  // 点击跳转登录或者用户个人主页
+  fnTapJumpLoginOrUserProfile() {
+    if (this.data.bIsLogin) {
+      wx.navigateTo({
+        url: `/pages/user/user?name=${this.data.oUserInfo.loginname}`
+      });
+    } else {
+      wx.navigateTo({
+        url: `/pages/login/login`
+      });
+    }
+  },
   // 注销登录
   fnTapLogout() {
     wx.showModal({

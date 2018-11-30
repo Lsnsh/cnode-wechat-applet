@@ -1,9 +1,9 @@
 <view class="message-item">
   <!-- 消息头部 -->
   <view class="message-header vh-parent clf ">
-    <view class="message-header-avatar fl-left">
+    <navigator class="message-header-avatar fl-left rounded-p50" url="/pages/user/user?name={{data.author.loginname}}">
       <image class="w-p100 h-p100 rounded-p50" src="{{data.author.avatar_url}}" />
-    </view>
+    </navigator>
     <view 
       class="message-header-content v w-p100"
       hover-class="message-header-content-hover"

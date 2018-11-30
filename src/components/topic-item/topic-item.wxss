@@ -1,9 +1,13 @@
+@import '/style/base.wxss';
+
 .topic-container {
-  padding: 25rpx;
-  background: #ffffff;
   margin-bottom: 20rpx;
   box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
   border-radius: 8rpx;
+}
+/* 主要内容 */
+.topic-container .topic-main {
+  padding: 25rpx 25rpx 20rpx 25rpx;
 }
 /* 头部 */
 .topic-container .topic-header {
@@ -26,13 +30,14 @@
 /* 分隔线 */
 .topic-container .topic-divide {
   height: 1px;
-  margin: 20rpx 0;
+  margin: 0 25rpx;
   background: #E3E3E3;
 }
 /* 主题底部 */
 .topic-container .topic-footer {
-  font-size: 24rpx; 
   height: 60rpx;
+  padding: 20rpx 25rpx 25rpx 25rpx;
+  font-size: 24rpx; 
 }
 .topic-container .topic-footer .topic-footer-left {
   float: left;
@@ -41,7 +46,6 @@
   float: left;
   width: 60rpx;
   height: 60rpx;
-  border-radius: 50%;
 }
 .topic-container .topic-footer .topic-footer-left .topic-author-name {
   display:inline-block;
