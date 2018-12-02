@@ -136,8 +136,11 @@ let oTodo = {
 };
 ```
 
-> 不确定数据类型的变量，没有强制遵循
+## 项目依赖
 
+* ### [moment](https://github.com/moment/moment)
+* ### [path-to-regexp](https://github.com/pillarjs/path-to-regexp)
+* ### [wemark](https://github.com/TooBug/wemark)
 
 [1]: https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html
 [2]: http://momentjs.cn/docs/#/i18n/
