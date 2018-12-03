@@ -1,66 +1,72 @@
-<view class="topic-container fadein-init {{bIsReady ? 'fadein' : ''}}">
-  <view class="topic-main">
-    <!-- 标题 -->
-    <h3 class="fw-500">{{oTopicDetail.title}}</h3>
-    <!-- 基本信息 -->
-    <view class="topic-info vh-parent">
-      <navigator class="topic-info-left fl-left rounded-p50" url="/pages/user/user?name={{oTopicDetail.loginname}}">
-        <image class="w-p100 h-p100 rounded-p50" src="{{oTopicDetail.avatar_url}}" />
-      </navigator>
-      <view class="topic-info-center">
-        <view style="margin-bottom: 15rpx;">
-          <topic-tag type="{{oTopicDetail.tab}}" style="margin-right: 15rpx;"></topic-tag>
-          <text>{{oTopicDetail.loginname}}</text>
-        </view>
-        <view class="color-grey" style="font-size: 28rpx;">
-          <text>{{oTopicDetail.create_at}}创建</text>
-          <text style="padding: 0 5rpx;">·</text>
-          <text>{{oTopicDetail.visit_count}}次浏览</text>
-        </view>
-      </view>
-      <i 
-        class="v icon icon-collect {{oTopicDetail.is_collect ? 'color-green' : 'color-grey'}}"
-        style="right: 10rpx;font-size: 50rpx;"
-        bindtap="fnTapSwitchTopicCollectStatus">
-      </i>
-    </view>
-    <!-- 内容 -->
-    <view class="topic-content">
-      <wemark type="wemark" md="{{oTopicDetail.content}}" highlight link></wemark>
-    </view>
+<view class="topic-page-container">
+  <!-- 页面首次加载时的loading -->
+  <view wx:if="{{!bIsReady}}" class="h-vh100 vh-parent fs-28 color-grey">
+    <text class="vh">加载中...</text>
   </view>
-  <!-- 评论列表 -->
-  <view class="topic-comment-list">
-    <view class="topic-comment-list-header">{{oTopicDetail.replies.length}}条评论</view>
-    <view class="topic-comment-item" wx:for="{{oTopicDetail.replies}}" wx:key="{{index}}">
-      <view class="vh-parent clf">
-        <!-- 评论者信息 -->
-        <navigator class="topic-comment-left fl-left rounded-p50" url="/pages/user/user?name={{item.loginname}}">
-          <image class="w-p100 h-p100 rounded-p50" src="{{item.avatar_url}}" />
+  <view class="fadein-init {{bIsReady ? 'fadein' : ''}}">
+    <view class="topic-main">
+      <!-- 标题 -->
+      <h3 class="fw-500">{{oTopicDetail.title}}</h3>
+      <!-- 基本信息 -->
+      <view class="topic-info vh-parent">
+        <navigator class="topic-info-left fl-left rounded-p50" url="/pages/user/user?name={{oTopicDetail.loginname}}">
+          <image class="w-p100 h-p100 rounded-p50" src="{{oTopicDetail.avatar_url}}" />
         </navigator>
-        <view class="topic-comment-center">
-          <view style="margin-bottom: 15rpx;">{{item.loginname}}</view>
+        <view class="topic-info-center">
+          <view style="margin-bottom: 15rpx;">
+            <topic-tag type="{{oTopicDetail.tab}}" style="margin-right: 15rpx;"></topic-tag>
+            <text>{{oTopicDetail.loginname}}</text>
+          </view>
           <view class="color-grey" style="font-size: 28rpx;">
-            <text class="color-green">{{index + 1}}楼</text>
+            <text>{{oTopicDetail.create_at}}创建</text>
             <text style="padding: 0 5rpx;">·</text>
-            <text>{{item.create_at}}</text>
+            <text>{{oTopicDetail.visit_count}}次浏览</text>
           </view>
         </view>
-        <!-- 点赞icon和点赞数 -->
-        <view
-          class="v"
-          style="color: #757575;right: 10rpx;font-size: 24rpx;"
-          data-id="{{item.id}}"
-          data-index="{{index}}"
-          bindtap="fnTapLikeCommentOrDislike"
-        >
-          <i class="icon icon-up {{item.is_uped ? 'color-green' : ''}}" style="font-size: 50rpx;margin-right: 10rpx;"></i>
-          <text class="inbl vtal-top" style="height: 50rpx;line-height: 60rpx;">{{item.ups.length}}</text>
-        </view>
+        <i 
+          class="v icon icon-collect {{oTopicDetail.is_collect ? 'color-green' : 'color-grey'}}"
+          style="right: 10rpx;font-size: 50rpx;"
+          bindtap="fnTapSwitchTopicCollectStatus">
+        </i>
       </view>
-      <!-- 评论内容 -->
-      <view class="topic-comment-content">
-        <wemark type="wemark" md="{{item.content}}" highlight link></wemark>
+      <!-- 内容 -->
+      <view class="topic-content">
+        <wemark type="wemark" md="{{oTopicDetail.content}}" highlight link></wemark>
+      </view>
+    </view>
+    <!-- 评论列表 -->
+    <view class="topic-comment-list">
+      <view class="topic-comment-list-header">{{oTopicDetail.replies.length}}条评论</view>
+      <view class="topic-comment-item" wx:for="{{oTopicDetail.replies}}" wx:key="{{index}}">
+        <view class="vh-parent clf">
+          <!-- 评论者信息 -->
+          <navigator class="topic-comment-left fl-left rounded-p50" url="/pages/user/user?name={{item.loginname}}">
+            <image class="w-p100 h-p100 rounded-p50" src="{{item.avatar_url}}" />
+          </navigator>
+          <view class="topic-comment-center">
+            <view style="margin-bottom: 15rpx;">{{item.loginname}}</view>
+            <view class="color-grey" style="font-size: 28rpx;">
+              <text class="color-green">{{index + 1}}楼</text>
+              <text style="padding: 0 5rpx;">·</text>
+              <text>{{item.create_at}}</text>
+            </view>
+          </view>
+          <!-- 点赞icon和点赞数 -->
+          <view
+            class="v"
+            style="color: #757575;right: 10rpx;font-size: 24rpx;"
+            data-id="{{item.id}}"
+            data-index="{{index}}"
+            bindtap="fnTapLikeCommentOrDislike"
+          >
+            <i class="icon icon-up {{item.is_uped ? 'color-green' : ''}}" style="font-size: 50rpx;margin-right: 10rpx;"></i>
+            <text class="inbl vtal-top" style="height: 50rpx;line-height: 60rpx;">{{item.ups.length}}</text>
+          </view>
+        </view>
+        <!-- 评论内容 -->
+        <view class="topic-comment-content">
+          <wemark type="wemark" md="{{item.content}}" highlight link></wemark>
+        </view>
       </view>
     </view>
   </view>

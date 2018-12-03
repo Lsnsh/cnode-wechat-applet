@@ -1,4 +1,4 @@
-.topic-container {
+.topic-page-container {
   padding: 20rpx;
 }
 .topic-main {

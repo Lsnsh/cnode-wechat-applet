@@ -1,26 +1,33 @@
-<view class="home-page-container fadein-init {{bIsReady ? 'fadein' : ''}}">
-  <!-- 主题分类tabBar -->
-  <view class="topic-tabbar">
-    <view
-      class="topic-tabbar-item {{ nActiveTabIndex === index ? 'topic-tabbar-item-active' : '' }}"
-      wx:for="{{aTabBarList}}"
-      wx:key="{{index}}"
-      data-index="{{index}}"
-      data-tab="{{item.tab}}"
-      bindtap="fnTapSwitchTab"
-    >
-      <text>{{item.text}}</text>
-    </view>
+<view class="home-page-container">
+  <!-- 页面首次加载时的loading -->
+  <view wx:if="{{!bIsReady}}" class="h-vh100 vh-parent fs-28 color-grey">
+    <text class="vh">加载中...</text>
   </view>
-  <view  class="topic-list-wrap">
-    <block wx:if="{{aTopicList.length}}">
-      <topic-list data="{{aTopicList}}"></topic-list>
-      <view class="topic-list-loading ta-c color-grey">加载中...</view>
-    </block>
-    <block wx:else>
-      <view class="topic-list-no-data vh-parent color-grey">
-        <text class="vh">暂无数据～</text>
+  <!-- 话题列表 -->
+  <view class="fadein-init {{bIsReady ? 'fadein' : ''}}">
+    <!-- 主题分类tabBar -->
+    <view class="topic-tabbar">
+      <view
+        class="topic-tabbar-item {{ nActiveTabIndex === index ? 'topic-tabbar-item-active' : '' }}"
+        wx:for="{{aTabBarList}}"
+        wx:key="{{index}}"
+        data-index="{{index}}"
+        data-tab="{{item.tab}}"
+        bindtap="fnTapSwitchTab"
+      >
+        <text>{{item.text}}</text>
       </view>
-    </block>
+    </view>
+    <view class="topic-list-wrap">
+      <block wx:if="{{aTopicList.length}}">
+        <topic-list data="{{aTopicList}}"></topic-list>
+        <view class="topic-list-loading ta-c color-grey">加载中...</view>
+      </block>
+      <block wx:else>
+        <view class="topic-list-no-data vh-parent color-grey">
+          <text class="vh">暂无数据～</text>
+        </view>
+      </block>
+    </view>
   </view>
 </view>

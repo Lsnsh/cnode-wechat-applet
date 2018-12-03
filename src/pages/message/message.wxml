@@ -1,26 +1,32 @@
-<view class="message-list-container fadein-init {{bIsReady ? 'fadein' : ''}}">
-  <block wx:if="{{aHasNotReadMessageList.length || aHasReadMessageList.length}}">
-    <!-- 未读消息列表 -->
-    <view class="message-list has-not-read-message-list">
-      <!-- 新消息 -->
-      <view class="message-list-title">
-        <text>新消息</text>
-        <text>({{aHasNotReadMessageList.length}})</text>
+<view class="message-page-container">
+  <!-- 页面首次加载时的loading -->
+  <view wx:if="{{!bIsReady}}" class="h-vh100 vh-parent fs-28 color-grey">
+    <text class="vh">加载中...</text>
+  </view>
+  <view class="fadein-init {{bIsReady ? 'fadein' : ''}}">
+    <block wx:if="{{aHasNotReadMessageList.length || aHasReadMessageList.length}}">
+      <!-- 未读消息列表 -->
+      <view class="message-list has-not-read-message-list">
+        <!-- 新消息 -->
+        <view class="message-list-title">
+          <text>新消息</text>
+          <text>({{aHasNotReadMessageList.length}})</text>
+        </view>
+        <message-item wx:for="{{aHasNotReadMessageList}}" wx:key="{{item.id}}" data="{{item}}" bindread="fnHandleHasReadMessageEvent"></message-item>
       </view>
-      <message-item wx:for="{{aHasNotReadMessageList}}" wx:key="{{item.id}}" data="{{item}}" bindread="fnHandleHasReadMessageEvent"></message-item>
-    </view>
-    <!-- 已读消息列表 -->
-    <view class="message-list">
-      <view class="message-list-title">
-        <text>已读消息</text>
-        <text>({{aHasReadMessageList.length}})</text>
+      <!-- 已读消息列表 -->
+      <view class="message-list">
+        <view class="message-list-title">
+          <text>已读消息</text>
+          <text>({{aHasReadMessageList.length}})</text>
+        </view>
+        <message-item wx:for="{{aHasReadMessageList}}" wx:key="{{item.id}}" data="{{item}}"></message-item>
       </view>
-      <message-item wx:for="{{aHasReadMessageList}}" wx:key="{{item.id}}" data="{{item}}"></message-item>
-    </view>
-  </block>
-  <block wx:else>
-    <view class="message-list-no-data vh-parent color-grey">
-      <text class="vh">暂无消息</text>
-    </view>
-  </block>
+    </block>
+    <block wx:else>
+      <view class="message-list-no-data vh-parent color-grey">
+        <text class="vh">暂无消息</text>
+      </view>
+    </block>
+  </view>
 </view>

@@ -1,4 +1,4 @@
-.message-list-container {
+.message-page-container {
   padding: 20rpx;
 }
 .message-list {

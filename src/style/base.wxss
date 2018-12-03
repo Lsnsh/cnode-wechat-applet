@@ -44,6 +44,9 @@
 .h-p100 {
   height: 100%;
 }
+.h-vh100 {
+  height: 100vh;
+}
 /* 浮动 */
 .clf::after {
   content: '';
@@ -59,6 +62,10 @@
 /* 圆角 */
 .rounded-p50 {
   border-radius: 50%;
+}
+/* 字号 */
+.fs-28 {
+  font-size: 28rpx;
 }
 /* 字体 */
 .fw-300 {
