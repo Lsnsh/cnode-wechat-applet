@@ -13,5 +13,5 @@ export default {
     url: API.HOST + API.PATH
   },
   // 项目当前版本号
-  version: '1.1.2'
+  version: '1.1.3'
 };
