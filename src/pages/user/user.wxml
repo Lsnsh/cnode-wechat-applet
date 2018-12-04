@@ -1,6 +1,6 @@
 <view class="user-page-container">
   <!-- 页面首次加载时的loading -->
-  <view wx:if="{{!bIsReady}}" class="h-vh100 vh-parent fs-28 color-grey">
+  <view wx:if="{{!bIsReady}}" class="page-loading h-vh100 fs-28 color-grey">
     <text class="vh">加载中...</text>
   </view>
   <view class="fadein-init {{bIsReady ? 'fadein' : ''}}">

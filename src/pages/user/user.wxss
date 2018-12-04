@@ -51,3 +51,9 @@
   padding: 30rpx 20rpx;
   font-size: 28rpx;
 }
+.page-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
