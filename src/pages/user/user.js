@@ -134,7 +134,9 @@ Page({
     }
     oResult.aTopicList = aData.map(oItem => {
       return {
-        ...oItem,
+        id: oItem.id,
+        title: oItem.title,
+        author: oItem.author,
         last_reply_at: wx.moment(oItem.last_reply_at).fromNow()
       };
     });
