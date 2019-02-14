@@ -6,6 +6,6 @@
   "backgroundTextStyle":"dark",
   "navigationBarBackgroundColor": "#444444",
   "navigationBarTitleText": "话题",
-  "navigationBarTextStyle":"light",
+  "navigationBarTextStyle":"white",
   "enablePullDownRefresh": true
 }
